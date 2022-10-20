@@ -22,7 +22,7 @@ import ButtonBasic from "../components/ButtonBasic.vue";
             <div>
               <ButtonBasic>
                 <template #content>
-                  <button class="py-2 px-4 bg-blue-700 rounded-md">
+                  <button class="py-2 px-4 bg-blue-700 rounded-full">
                     <span class="px-2">Button</span>
                   </button>
                 </template>
@@ -39,14 +39,14 @@ import ButtonBasic from "../components/ButtonBasic.vue";
           >
             <div>
               <span class="mr-2">
-                <font-awesome-icon icon="fa-solid fa-circle-info" />
+                <font-awesome-icon icon="fa-solid fa-circle-check" />
               </span>
               <span><b>Info state.</b>NotificationBar</span>
             </div>
             <div>
               <ButtonBasic>
                 <template #content>
-                  <button class="py-2 px-4 bg-blue-500 rounded-md">
+                  <button class="py-2 px-4 bg-blue-500 rounded-full">
                     <span class="px-2">Button</span>
                   </button>
                 </template>
@@ -63,14 +63,14 @@ import ButtonBasic from "../components/ButtonBasic.vue";
           >
             <div>
               <span class="mr-2">
-                <font-awesome-icon icon="fa-solid fa-circle-info" />
+                <font-awesome-icon icon="fa-solid fa-triangle-exclamation" />
               </span>
               <span><b>Info state.</b>NotificationBar</span>
             </div>
             <div>
               <ButtonBasic>
                 <template #content>
-                  <button class="py-2 px-4 bg-blue-500 rounded-md">
+                  <button class="py-2 px-4 bg-blue-500 rounded-full">
                     <span class="px-2">Button</span>
                   </button>
                 </template>
@@ -87,14 +87,14 @@ import ButtonBasic from "../components/ButtonBasic.vue";
           >
             <div>
               <span class="mr-2">
-                <font-awesome-icon icon="fa-solid fa-circle-info" />
+                <font-awesome-icon icon="fa-solid fa-circle-exclamation" />
               </span>
               <span><b>Info state.</b>NotificationBar</span>
             </div>
             <div>
               <ButtonBasic>
                 <template #content>
-                  <button class="py-2 px-4 bg-blue-500 rounded-md">
+                  <button class="py-2 px-4 bg-blue-500 rounded-full">
                     <span class="px-2">Button</span>
                   </button>
                 </template>

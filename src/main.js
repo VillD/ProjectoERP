@@ -8,7 +8,6 @@ import router from "./router";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-import { faUserSecret } from "@fortawesome/free-solid-svg-icons";
 import { faUsers } from "@fortawesome/free-solid-svg-icons";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
@@ -16,16 +15,39 @@ import { faMoneyBill1 } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
+import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
+import { faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faDisplay } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import { faTable } from "@fortawesome/free-solid-svg-icons";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faListUl } from "@fortawesome/free-solid-svg-icons";
 
+import { faLock } from "@fortawesome/free-solid-svg-icons";
 library.add(
-  faUserSecret,
   faUsers,
   faChevronUp,
   faGear,
   faMoneyBill1,
   faArrowRight,
   faArrowUpRightFromSquare,
-  faCircleInfo
+  faCircleInfo,
+  faCircleCheck,
+  faTriangleExclamation,
+  faCircleExclamation,
+  faXmark,
+  faDisplay,
+  faArrowRightToBracket,
+  faUser,
+  faPenToSquare,
+  faTable,
+  faListUl,
+  faPlus,
+  faLock
 );
 
 const app = createApp(App);

@@ -5,6 +5,8 @@ import CardUser from "./components/CardUser.vue";
 import LoginComponent from "./components/LoginComponent.vue";
 import ButtonView from "./views/ButtonView.vue";
 import NotificationView from "./views/NotificationView.vue";
+import ModaView from "./views/ModaView.vue";
+import AsideComponent from "./components/AsideComponent.vue";
 </script>
 
 <template>
@@ -25,5 +27,7 @@ import NotificationView from "./views/NotificationView.vue";
     <LoginComponent />
     <ButtonView />
     <NotificationView />
+    <ModaView />
+    <AsideComponent />
   </div>
 </template>

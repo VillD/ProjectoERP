@@ -81,34 +81,4 @@
       </div>
     </div>
   </aside>
-
-  <!-- 
-    <div class="flex flex-col gap-4">
-      <div class="flex justify-between"></div>
-
-      <div class="flex justify-between"></div>
-
-      <div class="flex justify-between"></div>
-
-      <div class="flex justify-between"></div>
-
-      <div class="flex justify-between">
-        <span><font-awesome-icon icon="fa-solid fa-user" /></span>
-        <p class="flex-grow">Profile</p>
-      </div>
-
-      <div class="flex justify-between">
-        <span><font-awesome-icon icon="fa-solid fa-list-ul" /></span>
-        <p class="flex-grow">Dropdown</p>
-        <span><font-awesome-icon icon="fa-solid fa-plus" /></span>
-      </div>
-    </div>
-    <div>
-      <div class="flex justify-between">
-        <span
-          ><font-awesome-icon icon="fa-solid fa-arrow-right-to-bracket"
-        /></span>
-        <p class="flex-grow">Logout</p>
-      </div>
-    </div> -->
 </template>

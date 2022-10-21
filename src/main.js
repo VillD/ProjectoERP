@@ -26,10 +26,14 @@ import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { faTable } from "@fortawesome/free-solid-svg-icons";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faListUl } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 
 import { faLock } from "@fortawesome/free-solid-svg-icons";
 library.add(
   faUsers,
+  faEllipsisVertical,
+  faBars,
   faChevronUp,
   faGear,
   faMoneyBill1,

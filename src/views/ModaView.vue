@@ -3,7 +3,9 @@ import ModaBasic from "../components/ModaBasic.vue";
 import ButtonBasic from "../components/ButtonBasic.vue";
 </script>
 <template>
-  <div class="bg-blue-900 rounded-xl max-w-xs sm:max-w-md m-2 p-4 text-white">
+  <div
+    class="bg-slate-900/70 rounded-xl max-w-xs sm:max-w-md m-2 p-4 text-white"
+  >
     <ModaBasic>
       <template #header>
         <div class="flex justify-between">

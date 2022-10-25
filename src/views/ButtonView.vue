@@ -3,16 +3,15 @@ import { ref } from "vue";
 import ButtonBasic from "../components/ButtonBasic.vue";
 import SettingBasic from "../components/SettingBasic.vue";
 
-let button = ref(true)
+let button = ref(true);
 
-const buttonOutline = () =>{
-  button.value = !button.value
-}
-
+const buttonOutline = () => {
+  button.value = !button.value;
+};
 </script>
 <template>
   <div
-    class="bg-blue-900 rounded-xl max-w-xs sm:max-w-md m-2 pl-4 lg:max-w-4xl"
+    class="bg-slate-900/70 rounded-xl max-w-xs sm:max-w-md m-2 pl-4 lg:max-w-4xl"
   >
     <h1 class="text-lg font-semibold text-white pt-4 pb-2">Settings</h1>
     <div class="flex flex-wrap">
@@ -25,7 +24,7 @@ const buttonOutline = () =>{
                 type="checkbox"
                 name=""
                 id=""
-                class="appearance-none p-1 flex rounded-full items-center w-12 h-6 bg-slate-500 before:block before:h-5 before:w-5 before:bg-white before:rounded-full checked:flex-row-reverse"
+                class="appearance-none p-1 flex rounded-full items-center w-12 h-6 bg-slate-500 before:block before:h-5 before:w-5 before:bg-white before:rounded-full checked:flex-row-reverse checked:bg-blue-500"
               />
               <!-- <span
                 class=""
@@ -45,7 +44,7 @@ const buttonOutline = () =>{
                 type="checkbox"
                 name=""
                 id=""
-                class="appearance-none p-1 flex rounded-full items-center w-12 h-6 bg-slate-500 before:block before:h-5 before:w-5 before:bg-white before:rounded-full checked:flex-row-reverse"
+                class="appearance-none p-1 flex rounded-full items-center w-12 h-6 bg-slate-500 before:block before:h-5 before:w-5 before:bg-white before:rounded-full checked:flex-row-reverse checked:bg-blue-500"
               />
               <span class="pl-2">Small</span>
             </label>
@@ -61,7 +60,7 @@ const buttonOutline = () =>{
                 type="checkbox"
                 name=""
                 id=""
-                class="appearance-none p-1 flex rounded-full items-center w-12 h-6 bg-slate-500 before:block before:h-5 before:w-5 before:bg-white before:rounded-full checked:flex-row-reverse"
+                class="appearance-none p-1 flex rounded-full items-center w-12 h-6 bg-slate-500 before:block before:h-5 before:w-5 before:bg-white before:rounded-full checked:flex-row-reverse checked:bg-blue-500"
               />
               <!-- class="absolute opacity-0 -z-10"
               <span
@@ -82,9 +81,9 @@ const buttonOutline = () =>{
                 type="checkbox"
                 name=""
                 id=""
-                class="appearance-none p-1 flex rounded-full items-center w-12 h-6 bg-slate-500 before:block before:h-5 before:w-5 before:bg-white before:rounded-full checked:flex-row-reverse"
+                class="appearance-none p-1 flex rounded-full items-center w-12 h-6 bg-slate-500 before:block before:h-5 before:w-5 before:bg-white before:rounded-full checked:flex-row-reverse checked:bg-blue-500"
               />
-              
+
               <span class="pl-2">Disabled</span>
             </label>
           </div>
@@ -97,7 +96,7 @@ const buttonOutline = () =>{
         <template #content>
           <div class="">
             <button class="bg-slate-500 py-2 px-4 rounded">
-              <span class="px-2">Button</span>
+              <span class="text-white px-2">Button</span>
             </button>
           </div>
         </template>
@@ -105,10 +104,12 @@ const buttonOutline = () =>{
 
       <ButtonBasic>
         <template #content>
-          <div class="" >
-            <button :class="[buttonOutline ?'bg-white': 'bg-transparent']" 
-                    class=" py-2 px-4 rounded">
-              <span class="px-2">Button 1</span>
+          <div class="">
+            <button
+              :class="[buttonOutline ? 'bg-white' : 'bg-transparent']"
+              class="py-2 px-4 rounded"
+            >
+              <span class="px-2">Button</span>
             </button>
           </div>
         </template>
@@ -118,7 +119,7 @@ const buttonOutline = () =>{
         <template #content>
           <div class="">
             <button class="bg-blue-500 py-2 px-4 rounded">
-              <span class="px-2">Button</span>
+              <span class="px-2 text-white">Button</span>
             </button>
           </div>
         </template>
@@ -127,8 +128,8 @@ const buttonOutline = () =>{
       <ButtonBasic>
         <template #content>
           <div class="">
-            <button class="bg-green-500 py-2 px-4 rounded">
-              <span class="px-2">Button</span>
+            <button class="bg-green-400 py-2 px-4 rounded">
+              <span class="px-2 text-white">Button</span>
             </button>
           </div>
         </template>
@@ -138,7 +139,7 @@ const buttonOutline = () =>{
         <template #content>
           <div class="">
             <button class="bg-red-500 py-2 px-4 rounded">
-              <span class="px-2">Button</span>
+              <span class="px-2 text-white">Button</span>
             </button>
           </div>
         </template>
@@ -147,7 +148,7 @@ const buttonOutline = () =>{
       <ButtonBasic>
         <template #content>
           <div class="">
-            <button class="bg-yellow-500 py-2 px-4 rounded">
+            <button class="bg-yellow-500 py-2 px-4 rounded text-white">
               <span class="px-2">Button</span>
             </button>
           </div>
@@ -159,7 +160,7 @@ const buttonOutline = () =>{
       <ButtonBasic>
         <template #content>
           <div class="">
-            <button :class="['bg']" class="bg-slate-500 py-2 px-4 rounded">
+            <button class="bg-slate-500 py-2 px-4 rounded text-white">
               <font-awesome-icon
                 icon="fa-solid fa-arrow-up-right-from-square"
               />
@@ -185,7 +186,7 @@ const buttonOutline = () =>{
       <ButtonBasic>
         <template #content>
           <div class="">
-            <button class="bg-blue-500 py-2 px-4 rounded">
+            <button class="bg-blue-500 py-2 px-4 rounded text-white">
               <font-awesome-icon
                 icon="fa-solid fa-arrow-up-right-from-square"
               />
@@ -198,7 +199,7 @@ const buttonOutline = () =>{
       <ButtonBasic>
         <template #content>
           <div class="">
-            <button class="bg-green-500 py-2 px-4 rounded">
+            <button class="bg-green-400 py-2 px-4 rounded text-white">
               <font-awesome-icon
                 icon="fa-solid fa-arrow-up-right-from-square"
               />
@@ -211,7 +212,7 @@ const buttonOutline = () =>{
       <ButtonBasic>
         <template #content>
           <div class="">
-            <button class="bg-red-500 py-2 px-4 rounded">
+            <button class="bg-red-500 py-2 px-4 rounded text-white">
               <font-awesome-icon
                 icon="fa-solid fa-arrow-up-right-from-square"
               />
@@ -224,7 +225,7 @@ const buttonOutline = () =>{
       <ButtonBasic>
         <template #content>
           <div class="">
-            <button class="bg-yellow-500 py-2 px-4 rounded">
+            <button class="bg-yellow-500 py-2 px-4 rounded text-white">
               <font-awesome-icon
                 icon="fa-solid fa-arrow-up-right-from-square"
               />
@@ -239,7 +240,7 @@ const buttonOutline = () =>{
       <ButtonBasic>
         <template #content>
           <div class="bg-slate-500 rounded-md">
-            <button class="flex p-2.5">
+            <button class="flex p-2.5 text-white">
               <font-awesome-icon
                 icon="fa-solid fa-arrow-up-right-from-square"
               />
@@ -263,7 +264,7 @@ const buttonOutline = () =>{
       <ButtonBasic>
         <template #content>
           <div class="bg-blue-500 rounded-md">
-            <button class="flex p-2.5">
+            <button class="flex p-2.5 text-white">
               <font-awesome-icon
                 icon="fa-solid fa-arrow-up-right-from-square"
               />
@@ -274,8 +275,8 @@ const buttonOutline = () =>{
 
       <ButtonBasic>
         <template #content>
-          <div class="bg-green-500 rounded-md">
-            <button class="flex p-2.5">
+          <div class="bg-green-400 rounded-md">
+            <button class="flex p-2.5 text-white">
               <font-awesome-icon
                 icon="fa-solid fa-arrow-up-right-from-square"
               />
@@ -287,7 +288,7 @@ const buttonOutline = () =>{
       <ButtonBasic>
         <template #content>
           <div class="bg-red-500 rounded-md">
-            <button class="flex p-2.5">
+            <button class="flex p-2.5 text-white">
               <font-awesome-icon
                 icon="fa-solid fa-arrow-up-right-from-square"
               />
@@ -299,7 +300,7 @@ const buttonOutline = () =>{
       <ButtonBasic>
         <template #content>
           <div class="bg-yellow-500 rounded-md">
-            <button class="flex p-2.5">
+            <button class="flex p-2.5 text-white">
               <font-awesome-icon
                 icon="fa-solid fa-arrow-up-right-from-square"
               />

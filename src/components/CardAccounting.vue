@@ -3,7 +3,7 @@ import CardBasic from "./CardBasic.vue";
 </script>
 <template>
   <div class="m-2">
-    <CardBasic class="flex flex-col max-w-xs sm:max-w-md">
+    <CardBasic class="bg-slate-900/70 py-6 flex flex-col max-w-xs sm:max-w-md">
       <template #header>
         <div class="flex justify-between">
           <div

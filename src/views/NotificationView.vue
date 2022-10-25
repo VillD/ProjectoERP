@@ -5,7 +5,7 @@ import ButtonBasic from "../components/ButtonBasic.vue";
 
 <template>
   <div
-    class="bg-blue-900 rounded-xl py-3 max-w-xs sm:max-w-md m-2 px-4 lg:max-w-4xl"
+    class="bg-transparent rounded-xl py-3 max-w-xs sm:max-w-md m-2 px-4 lg:max-w-4xl"
   >
     <div class="flex flex-col gap-4">
       <NotificationBasic>
@@ -22,7 +22,9 @@ import ButtonBasic from "../components/ButtonBasic.vue";
             <div>
               <ButtonBasic>
                 <template #content>
-                  <button class="py-2 px-4 bg-blue-700 rounded-full">
+                  <button
+                    class="py-2 px-4 bg-white text-black rounded-full hover:bg-gray-100"
+                  >
                     <span class="px-2">Button</span>
                   </button>
                 </template>
@@ -46,7 +48,9 @@ import ButtonBasic from "../components/ButtonBasic.vue";
             <div>
               <ButtonBasic>
                 <template #content>
-                  <button class="py-2 px-4 bg-blue-500 rounded-full">
+                  <button
+                    class="py-2 px-4 bg-white text-black rounded-full hover:bg-gray-100"
+                  >
                     <span class="px-2">Button</span>
                   </button>
                 </template>
@@ -70,7 +74,9 @@ import ButtonBasic from "../components/ButtonBasic.vue";
             <div>
               <ButtonBasic>
                 <template #content>
-                  <button class="py-2 px-4 bg-blue-500 rounded-full">
+                  <button
+                    class="py-2 px-4 bg-white text-black rounded-full hover:bg-gray-100"
+                  >
                     <span class="px-2">Button</span>
                   </button>
                 </template>
@@ -94,7 +100,9 @@ import ButtonBasic from "../components/ButtonBasic.vue";
             <div>
               <ButtonBasic>
                 <template #content>
-                  <button class="py-2 px-4 bg-blue-500 rounded-full">
+                  <button
+                    class="py-2 px-4 bg-white text-black rounded-full hover:bg-gray-100"
+                  >
                     <span class="px-2">Button</span>
                   </button>
                 </template>

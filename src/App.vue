@@ -8,12 +8,10 @@ import NotificationView from "./views/NotificationView.vue";
 import ModaView from "./views/ModaView.vue";
 import AsideComponent from "./components/AsideComponent.vue";
 import NavComponent from "./components/NavComponent.vue";
-
 </script>
 
 <template>
-  <div>
-    
+  <div class="bg-slate-800">
     <header>
       <img
         alt="Vue logo"

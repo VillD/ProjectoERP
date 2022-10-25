@@ -3,7 +3,7 @@ import CardBasic from "../components/CardBasic.vue";
 import ButtonBasic from "../components/ButtonBasic.vue";
 import { ref } from "vue";
 
-const emit = defineEmits(["hideModal"]);
+defineEmits(["hideModal"]);
 
 const showModal = ref(false);
 // const handleButtonClick = () => {

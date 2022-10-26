@@ -1,13 +1,6 @@
 <script setup>
-import { ref } from "vue";
 import ButtonBasic from "../components/ButtonBasic.vue";
 import SettingBasic from "../components/SettingBasic.vue";
-
-let button = ref(true);
-
-const buttonOutline = () => {
-  button.value = !button.value;
-};
 </script>
 <template>
   <div
@@ -20,7 +13,6 @@ const buttonOutline = () => {
           <div class="flex pb-2">
             <label for="" class="flex mr-6">
               <input
-                @click="buttonOutline"
                 type="checkbox"
                 name=""
                 id=""
@@ -91,7 +83,11 @@ const buttonOutline = () => {
       </SettingBasic>
     </div>
 
-    <div class="flex gap-4 py-5 pr-4 flex-wrap">
+    <div class="m-5">
+      <ButtonBasic type="primary" title-button="Button"></ButtonBasic>
+    </div>
+
+    <!-- <div class="flex gap-4 py-5 pr-4 flex-wrap">
       <ButtonBasic>
         <template #content>
           <div class="">
@@ -308,6 +304,6 @@ const buttonOutline = () => {
           </div>
         </template>
       </ButtonBasic>
-    </div>
+    </div> -->
   </div>
 </template>

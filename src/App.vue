@@ -1,6 +1,5 @@
 <script setup>
 import HomeView from "./views/HomeView.vue";
-import PruebaView from "./views/PruebaView.vue";
 import CardUser from "./components/CardUser.vue";
 import LoginComponent from "./components/LoginComponent.vue";
 import ButtonView from "./views/ButtonView.vue";
@@ -23,7 +22,6 @@ import NavComponent from "./components/NavComponent.vue";
     </header>
 
     <HomeView />
-    <PruebaView />
     <CardUser />
     <LoginComponent />
     <ButtonView />

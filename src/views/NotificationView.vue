@@ -1,6 +1,6 @@
 <script setup>
-import NotificationBasic from "../components/NotificationBasic.vue";
-import ButtonBasic from "../components/ButtonBasic.vue";
+import NotificationBasic from '../components/NotificationBasic.vue'
+import ButtonBasic from '../components/ButtonBasic.vue'
 </script>
 
 <template>
@@ -37,7 +37,7 @@ import ButtonBasic from "../components/ButtonBasic.vue";
       <NotificationBasic>
         <template #content>
           <div
-            class="text-white rounded-md p-3 bg-green-500 flex justify-between items-center"
+            class="text-white rounded-md p-3 bg-access flex justify-between items-center"
           >
             <div>
               <span class="mr-2">

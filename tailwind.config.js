@@ -1,4 +1,4 @@
-const colors = require("tailwindcss/colors");
+// const colors = require("tailwindcss/colors");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -6,8 +6,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: colors.blue["500"],
-        danger: colors.red["500"],
+        // primary: colors.blue["500"],
+        // orange: colors.red["200"],
+        'gray-light': '#d3dce6',
       },
     },
   },

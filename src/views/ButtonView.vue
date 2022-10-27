@@ -4,9 +4,9 @@ import SettingBasic from "../components/SettingBasic.vue";
 </script>
 <template>
   <div
-    class="bg-slate-900/70 rounded-xl max-w-xs sm:max-w-md m-2 pl-4 lg:max-w-4xl"
+    class="bg-slate-900/70 rounded-xl max-w-xs sm:max-w-md m-2 p-4 lg:max-w-4xl"
   >
-    <h1 class="text-lg font-semibold text-white pt-4 pb-2">Settings</h1>
+    <h1 class="text-lg font-semibold text-white pb-2">Settings</h1>
     <div class="flex flex-wrap">
       <SettingBasic>
         <template #content>
@@ -84,7 +84,7 @@ import SettingBasic from "../components/SettingBasic.vue";
     </div>
 
     <div class="m-5">
-      <ButtonBasic type="primary" title-button="Button"></ButtonBasic>
+      <ButtonBasic type="gray-light" title-button="Button"></ButtonBasic>
     </div>
 
     <!-- <div class="flex gap-4 py-5 pr-4 flex-wrap">

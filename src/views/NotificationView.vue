@@ -5,7 +5,7 @@ import ButtonBasic from "../components/ButtonBasic.vue";
 
 <template>
   <div
-    class="bg-transparent rounded-xl py-3 max-w-xs sm:max-w-md m-2 px-4 lg:max-w-4xl"
+    class="bg-transparent rounded-xl p-4 max-w-xs sm:max-w-md m-2 lg:max-w-4xl"
   >
     <div class="flex flex-col gap-4">
       <NotificationBasic>

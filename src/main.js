@@ -8,26 +8,30 @@ import router from "./router";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-import { faUsers } from "@fortawesome/free-solid-svg-icons";
-import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
-import { faGear } from "@fortawesome/free-solid-svg-icons";
-import { faMoneyBill1 } from "@fortawesome/free-solid-svg-icons";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
-import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
-import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
-import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
-import { faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { faDisplay } from "@fortawesome/free-solid-svg-icons";
-import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
-import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
-import { faTable } from "@fortawesome/free-solid-svg-icons";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import { faListUl } from "@fortawesome/free-solid-svg-icons";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
+import { 
+  faUsers, 
+  faChevronUp, 
+  faGear, 
+  faMoneyBill1, 
+  faArrowRight,
+  faArrowUpRightFromSquare,
+  faCircleInfo,
+  faCircleCheck,
+  faTriangleExclamation,
+  faCircleExclamation,
+  faXmark,
+  faDisplay,
+  faArrowRightToBracket,
+  faUser, 
+  faPenToSquare, 
+  faTable,
+  faPlus,
+  faListUl,
+  faBars,
+  faEllipsisVertical,
+  faAngleDown,
+  faCircleHalfStroke,
+} from "@fortawesome/free-solid-svg-icons";
 
 import { faLock } from "@fortawesome/free-solid-svg-icons";
 library.add(
@@ -51,7 +55,9 @@ library.add(
   faTable,
   faListUl,
   faPlus,
-  faLock
+  faLock,
+  faAngleDown,
+  faCircleHalfStroke,
 );
 
 const app = createApp(App);

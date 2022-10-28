@@ -1,6 +1,5 @@
 /* eslint-env node */
-// const colors = require('tailwindcss/colors')
-
+// const defaultTheme = require('tailwindcss/defaultTheme')
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
@@ -18,8 +17,11 @@ module.exports = {
   },
   plugins: [],
   safelist: [
+    'outline-0',
+    'outline-1',
+    'outline-2',
     {
-      pattern: /(bg|text|border|outline)-(primary|secondary|danger)/
+      pattern: /(bg|text|border|)-(primary|secondary|danger)/
     }
   ]
 }

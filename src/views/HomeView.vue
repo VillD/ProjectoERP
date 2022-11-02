@@ -1,11 +1,11 @@
 <script setup>
-import CardBasic from "../components/CardBasic.vue";
-import ButtonBasic from "../components/ButtonBasic.vue";
-import { ref } from "vue";
+import CardBasic from '../components/CardBasic.vue'
+import BaseButton from '../components/BaseButton.vue'
+import { ref } from 'vue'
 
-defineEmits(["hideModal"]);
+defineEmits(['hideModal'])
 
-const showModal = ref(false);
+const showModal = ref(false)
 // const handleButtonClick = () => {
 //   emit("hideModal");
 // };
@@ -19,7 +19,7 @@ const showModal = ref(false);
 <template>
   <div class="">
     <div class="flex w-10/12 text-base mb-2 max-w-xs sm:max-w-md m-2">
-      <ButtonBasic>
+      <BaseButton>
         <template #content>
           <button
             @click="showModal = true"
@@ -29,7 +29,7 @@ const showModal = ref(false);
             Show Modal
           </button>
         </template>
-      </ButtonBasic>
+      </BaseButton>
     </div>
 
     <div

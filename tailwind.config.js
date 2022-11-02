@@ -17,11 +17,8 @@ module.exports = {
   },
   plugins: [],
   safelist: [
-    'outline-0',
-    'outline-1',
-    'outline-2',
     {
-      pattern: /(bg|text|border|)-(primary|secondary|danger)/
+      pattern: /(bg|text|)-(primary|secondary|danger)/
     }
   ]
 }

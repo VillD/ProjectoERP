@@ -7,18 +7,20 @@ module.exports = {
     extend: {
       colors: {
         primary: '#3b82f6',
-        secondary: '#ffffff',
+        secondary: '#67757d',
+        success: '#10B981',
         danger: '#ef4444',
         warning: '#eab308',
-        access: '#10B981',
-        dark: '#000000'
+        light: '#ffffff',
+        dark: '#1e293b'
       }
     }
   },
   plugins: [],
   safelist: [
     {
-      pattern: /(bg|text|)-(primary|secondary|danger)/
+      pattern:
+        /(bg|text|)-(primary|secondary|success|danger|warning|light|dark)/
     }
   ]
 }

@@ -1,5 +1,5 @@
 <script setup>
-import ButtonView from './views/ButtonView.vue'
+import UiView from './views/UIView.vue'
 // import HomeView from './views/HomeView.vue'
 // import CardUser from './components/CardUser.vue'
 // import LoginComponent from './components/LoginComponent.vue'
@@ -11,6 +11,6 @@ import ButtonView from './views/ButtonView.vue'
 
 <template>
   <div class="bg-slate-800">
-    <ButtonView />
+    <UiView />
   </div>
 </template>

@@ -31,7 +31,8 @@ import {
   faBars,
   faEllipsisVertical,
   faAngleDown,
-  faCircleHalfStroke
+  faCircleHalfStroke,
+  faArrowTrendUp
 } from '@fortawesome/free-solid-svg-icons'
 
 import { faLock } from '@fortawesome/free-solid-svg-icons'
@@ -58,7 +59,8 @@ library.add(
   faPlus,
   faLock,
   faAngleDown,
-  faCircleHalfStroke
+  faCircleHalfStroke,
+  faArrowTrendUp
 )
 
 const app = createApp(App)

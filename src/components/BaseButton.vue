@@ -6,10 +6,6 @@ let props = defineProps({
     type: String,
     default: null
   },
-  label: {
-    type: [String, Number],
-    default: null
-  },
   icon: {
     type: String,
     default: null
@@ -23,6 +19,8 @@ let props = defineProps({
 const buttonClass = computed(() => {
   let styles = {}
   const normal = `bg-${props.type}`
+  const text = `text-${props.type}`
+
   const outline = `bg-transparent outline outline-${props.type} text-${props.type} outline-1`
 
   const normalPadding = `px-3 py-2`

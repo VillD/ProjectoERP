@@ -3,6 +3,8 @@ import BaseSetting from '../components/BaseSetting.vue'
 import BaseButton from '../components/BaseButton.vue'
 import BaseIcon from '../components/BaseIcon.vue'
 import ButtonPill from '../components/ButtonPill.vue'
+import BaseCard from '../components/BaseCard.vue'
+import BaseNotification from '../components/BaseNotification.vue'
 
 import { ref } from 'vue'
 
@@ -16,7 +18,7 @@ const switchs = ref([
 const switchsPills = ref([
   { value: ref(false), name: 'Outline' },
   { value: ref(false), name: 'Small' },
-  { value: ref(false), name: 'Icon' },
+  { value: ref(false), name: 'Icon' }
 ])
 const buttons = ref([
   'primary',
@@ -27,10 +29,31 @@ const buttons = ref([
   'light',
   'dark'
 ])
-
 </script>
 <template>
-  <div class="flex flex-wrap"></div>
+  <div
+    class="bg-slate-900/70 rounded-xl max-w-xs sm:max-w-md p-6 lg:max-w-4xl m-2 mt-0"
+  >
+    <h1 class="text-lg font-semibold text-white pb-2">Modal examples</h1>
+
+    <BaseCard
+      type="primary"
+      class="mr-2"
+      >Show Modal</BaseCard
+    >
+    <BaseCard type="danger">Danger</BaseCard>
+    <BaseCard type="success">Success</BaseCard>
+  </div>
+
+  <div class="m-2">
+    <h1 class="text-lg font-semibold text-white pb-2">Notifications</h1>
+    <BaseNotification
+      type="primary"
+      color="primary"
+    >
+    </BaseNotification>
+  </div>
+
   <div
     class="bg-slate-900/70 rounded-xl max-w-xs sm:max-w-md m-2 p-6 lg:max-w-4xl flex-wrap"
   >
@@ -72,7 +95,7 @@ const buttons = ref([
         :disabled="switchs[3].value"
       >
         <BaseIcon
-          class="mx-2"
+          class="pr-2"
           name="fa-solid fa-arrow-up-right-from-square"
         />
         Button
@@ -94,7 +117,9 @@ const buttons = ref([
       </BaseButton>
     </div>
   </div>
-  <div class="bg-slate-900/70 rounded-xl max-w-xs sm:max-w-md m-2 p-6 lg:max-w-4xl flex-wrap">
+  <div
+    class="bg-slate-900/70 rounded-xl max-w-xs sm:max-w-md mx-2 p-6 lg:max-w-4xl flex-wrap"
+  >
     <h1 class="text-lg font-semibold text-white pb-2">Settings</h1>
     <div class="flex mb-6">
       <BaseSetting
@@ -116,8 +141,8 @@ const buttons = ref([
         :outline="switchsPills[0].value"
         :small="switchsPills[1].value"
         :icon="switchsPills[2].value"
+        path="fa-solid fa-arrow-trend-up"
       >
-        <BaseIcon name="fa-solid fa-arrow-trend-up" />
       </ButtonPill>
     </div>
   </div>

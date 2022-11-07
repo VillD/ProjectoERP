@@ -10,18 +10,19 @@ let props = defineProps({
     type: String,
     default: null
   },
-  disabled: Boolean,
-  outline: Boolean,
-  small: Boolean,
-  roundedFull: Boolean
+  disabled: { type: Boolean, default: false },
+  outline: { type: Boolean, default: false },
+  small: { type: Boolean, default: false },
+  roundedFull: { type: Boolean, default: false }
 })
 
 const buttonClass = computed(() => {
   let styles = {}
   const normal = `bg-${props.type}`
-  const text = `text-${props.type}`
 
-  const outline = `bg-transparent outline outline-${props.type} text-${props.type} outline-1`
+  const outline = `bg-transparent  outline outline-${props.type} text-${props.type} outline-1 `
+
+  const hover = 'hover:bg-${props.type} hover:text-white'
 
   const normalPadding = `px-3 py-2`
   const smallPadding = `p-1 text-sm`
@@ -29,17 +30,20 @@ const buttonClass = computed(() => {
   const roundedNormal = 'rounded'
   const roundedFull = `rounded-full`
 
-  const disabled = `bg-${props.type}/50 text-${props.type}/50  cursor-not-allowed outline-${props.type}/50`
+  const disabled = `opacity-70  cursor-not-allowed`
 
-  props.small ? (styles[smallPadding] = true) : (styles[normalPadding] = true)
+  styles[normal] = !props.outline
+  styles[outline] = props.outline
 
-  props.outline ? (styles[outline] = true) : (styles[normal] = true)
+  styles[hover] = !props.disabled
+  styles[disabled] = props.disabled
 
-  props.roundedFull
-    ? (styles[roundedFull] = true)
-    : (styles[roundedNormal] = true)
+  styles[smallPadding] = props.small
+  styles[normalPadding] = !props.small
 
-  props.disabled ? (styles[disabled] = true) : (styles[normal] = true)
+  styles[roundedFull] = props.roundedFull
+  styles[roundedNormal] = !props.roundedFull
+
   return styles
 })
 </script>
@@ -47,7 +51,7 @@ const buttonClass = computed(() => {
   <button
     type="button"
     :class="buttonClass"
-    class=""
+    class="transition"
   >
     <slot></slot>
   </button>

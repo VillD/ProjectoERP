@@ -1,5 +1,4 @@
 <script setup>
-import CardBasic from '../components/CardBasic.vue'
 import BaseButton from '../components/BaseButton.vue'
 import { ref } from 'vue'
 

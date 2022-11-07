@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue'
-import BaseIcon from './BaseIcon.vue';
+import BaseIcon from './BaseIcon.vue'
 // eslint-disable-next-line no-unused-vars
 let props = defineProps({
   type: {
@@ -11,9 +11,9 @@ let props = defineProps({
     type: String,
     default: null
   },
-  label:{
+  label: {
     type: String,
-    default:null
+    default: null
   },
   outline: Boolean,
   small: Boolean,
@@ -22,7 +22,7 @@ let props = defineProps({
 
 const ButtonPill = computed(() => {
   let styles = {}
-  const normal = `bg-${props.type} `
+  const normal = `bg-${props.type}`
   const outline = `bg-transparent outline outline-${props.type} text-${props.type} outline-1`
 
   const normalPadding = `px-4 py-1.5`
@@ -36,14 +36,16 @@ const ButtonPill = computed(() => {
 })
 </script>
 <template>
-    <button
+  <button
     type="button"
     :class="ButtonPill"
-    class=" capitalize rounded-full"
+    class="capitalize rounded-full cursor-default"
   >
-  <span>{{props.label}}</span>
-  <BaseIcon
-  :class="ButtonPill"
-  />
+    <span>{{ props.label }}</span>
+    <BaseIcon
+      v-if="icon"
+      :name="path"
+      class="pl-2"
+    />
   </button>
 </template>

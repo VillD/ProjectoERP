@@ -3,14 +3,6 @@ const props = defineProps({
   name: {
     type: String,
     default: null
-  },
-  w: {
-    type: Number,
-    default: null
-  },
-  h: {
-    type: Number,
-    default: null
   }
 })
 </script>

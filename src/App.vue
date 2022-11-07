@@ -10,7 +10,7 @@ import UiView from './views/UIView.vue'
 </script>
 
 <template>
-  <div class="bg-slate-800">
+  <div class="bg-slate-800 py-2">
     <UiView />
   </div>
 </template>

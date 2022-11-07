@@ -20,7 +20,8 @@ module.exports = {
   safelist: [
     {
       pattern:
-        /(bg|text|)-(primary|secondary|success|danger|warning|light|dark)/
+        /(bg|text|hover|)-(primary|secondary|success|danger|warning|light|dark)/,
+      variants: ['lg', 'hover', 'focus', 'lg:hover']
     }
   ]
 }

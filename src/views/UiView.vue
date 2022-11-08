@@ -4,7 +4,7 @@ import BaseButton from '../components/BaseButton.vue'
 import BaseIcon from '../components/BaseIcon.vue'
 import ButtonPill from '../components/ButtonPill.vue'
 import BaseCard from '../components/BaseCard.vue'
-import BaseNotification from '../components/BaseNotification.vue'
+import NotificationBar from '../components/NotificationBar.vue'
 
 import { ref } from 'vue'
 
@@ -37,28 +37,66 @@ const buttons = ref([
     <h1 class="text-lg font-semibold text-white pb-2">Modal examples</h1>
 
     <BaseCard
-      type="primary"
+      title="Primary card"
       class="mr-2"
-      >Show Modal</BaseCard
+      >Show Modal
+      <template #body> This is sample modal Lorem ipsum dolor </template>
+    </BaseCard>
+    <BaseCard
+      title="Unhandled exception"
+      type="danger"
+      color="danger"
+      >Danger
+      <template #body>This is sample modal Lorem ipsum dolor </template>
+    </BaseCard>
+    <BaseCard
+      title="Success"
+      color="success"
+      type="success"
+      >Success</BaseCard
     >
-    <BaseCard type="danger">Danger</BaseCard>
-    <BaseCard type="success">Success</BaseCard>
   </div>
 
   <div class="m-2">
     <h1 class="text-lg font-semibold text-white pb-2">Notifications</h1>
-    <BaseNotification
-      type="primary"
+
+    <NotificationBar
       color="primary"
+      title="Info state"
+      icon="fa-solid fa-circle-info"
     >
-    </BaseNotification>
+    </NotificationBar>
+    <NotificationBar
+      color="success"
+      title="Success state"
+      icon="fa-solid fa-circle-check"
+    >
+    </NotificationBar>
+    <NotificationBar
+      color="warning"
+      title="Warning state"
+      icon="fa-solid fa-triangle-exclamation"
+    >
+    </NotificationBar>
+    <NotificationBar
+      color="danger"
+      title="Danger state"
+      icon="fa-solid fa-circle-exclamation"
+    >
+    </NotificationBar>
+    <NotificationBar
+      color="light"
+      title="Contrast"
+      icon="fa-solid fa-circle-exclamation"
+    >
+    </NotificationBar>
   </div>
 
   <div
     class="bg-slate-900/70 rounded-xl max-w-xs sm:max-w-md m-2 p-6 lg:max-w-4xl flex-wrap"
   >
     <h1 class="text-lg font-semibold text-white pb-2">Settings</h1>
-    <div class="flex mb-6">
+    <div class="flex flex-wrap mb-6">
       <BaseSetting
         v-for="(item, k) in switchs"
         :key="k"
@@ -68,7 +106,7 @@ const buttons = ref([
       </BaseSetting>
     </div>
     <hr class="my-6 -mx-4 border-slate-800" />
-    <div class="flex">
+    <div class="">
       <BaseButton
         v-for="(type, index) in buttons"
         :key="index"

@@ -23,6 +23,7 @@ let props = defineProps({
 const ButtonPill = computed(() => {
   let styles = {}
   const normal = `bg-${props.type}`
+
   const outline = `bg-transparent outline outline-${props.type} text-${props.type} outline-1`
 
   const normalPadding = `px-4 py-1.5`
@@ -30,8 +31,10 @@ const ButtonPill = computed(() => {
 
   props.small ? (styles[smallPadding] = true) : (styles[normalPadding] = true)
 
-  props.outline ? (styles[outline] = true) : (styles[normal] = true)
+  styles[normal] = !props.outline
+  styles[outline] = props.outline
 
+  normal == 'bg-light' ? (styles['text-black'] = true) : null
   return styles
 })
 </script>

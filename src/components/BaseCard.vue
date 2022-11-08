@@ -5,9 +5,17 @@ import { ref } from 'vue'
 
 defineEmits(['hideModal'])
 const props = defineProps({
+  title: {
+    type: [String, Number],
+    default: null
+  },
   type: {
     type: String,
-    default: null
+    default: 'primary'
+  },
+  color: {
+    type: String,
+    default: 'primary'
   }
 })
 const showModal = ref(false)
@@ -16,7 +24,7 @@ const showModal = ref(false)
 <template>
   <!-- Modal button -->
   <BaseButton
-    class="w-1/3"
+    class="w-1/5 mr-2"
     :type="props.type"
     @click="showModal = true"
   >
@@ -35,8 +43,9 @@ const showModal = ref(false)
     <div
       class="flex flex-col w-10/12 sm:max-w-md z-50 m-auto bg-slate-900 rounded-2xl text-white"
     >
+      <!-- Header -->
       <div class="text-2xl px-6 pt-6 flex justify-between items-center">
-        <h1>Please confirm action</h1>
+        <h1>{{ props.title }}</h1>
         <span
           class="cursor-pointer w-6 h-6 inline-flex justify-center items-center hover:rounded-full hover:bg-slate-800"
         >
@@ -47,18 +56,19 @@ const showModal = ref(false)
           />
         </span>
       </div>
+      <!-- Body -->
       <div class="text-base p-6">
-        <p>Lorem ipsum dolor sit amet consectetur</p>
+        <slot name="body"></slot>
       </div>
       <div class="flex w-10/12 gap-4 text-base p-6">
         <BaseButton
+          :type="color"
           @click="handleButtonClick"
-          type="primary"
         >
           Confirm
         </BaseButton>
         <BaseButton
-          type="primary"
+          :type="color"
           outline="true"
           @click="showModal = false"
         >

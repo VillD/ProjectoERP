@@ -4,7 +4,7 @@ import { computed } from 'vue'
 let props = defineProps({
   type: {
     type: String,
-    default: null
+    default: 'primary'
   },
   icon: {
     type: String,
@@ -20,12 +20,12 @@ const buttonClass = computed(() => {
   let styles = {}
   const normal = `bg-${props.type}`
 
-  const outline = `bg-transparent  outline outline-${props.type} text-${props.type} outline-1 `
+  const outline = `bg-transparent outline outline-${props.type} text-${props.type} outline-1 `
 
-  const hover = 'hover:bg-${props.type} hover:text-white'
+  const hover = `hover:bg-${props.type} hover:text-white`
 
   const normalPadding = `px-3 py-2`
-  const smallPadding = `p-1 text-sm`
+  const smallPadding = `py-1.5 px-2.5 text-sm`
 
   const roundedNormal = 'rounded'
   const roundedFull = `rounded-full`
@@ -44,6 +44,9 @@ const buttonClass = computed(() => {
   styles[roundedFull] = props.roundedFull
   styles[roundedNormal] = !props.roundedFull
 
+  if (normal == 'bg-dark') {
+    styles['text-light'] = true
+  }
   return styles
 })
 </script>

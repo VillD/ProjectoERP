@@ -1,5 +1,6 @@
 <script setup>
-import UiView from './views/UIView.vue'
+import LayoutAuthenticated from './layouts/LayoutAuthenticated.vue'
+// import UiView from './views/UIView.vue'
 // import HomeView from './views/HomeView.vue'
 // import CardUser from './components/CardUser.vue'
 // import LoginComponent from './components/LoginComponent.vue'
@@ -10,7 +11,9 @@ import UiView from './views/UIView.vue'
 </script>
 
 <template>
-  <div class="bg-slate-800 py-2">
-    <UiView />
+  <div class="bg-slate-800">
+    <!-- <UiView /> -->
+    <!-- <ModaView /> -->
+    <LayoutAuthenticated />
   </div>
 </template>

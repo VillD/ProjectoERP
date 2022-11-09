@@ -1,4 +1,6 @@
 <script setup>
+// import LayoutAuthenticated from '../layouts/LayoutAuthenticated.vue'
+
 import BaseSetting from '../components/BaseSetting.vue'
 import BaseButton from '../components/BaseButton.vue'
 import BaseIcon from '../components/BaseIcon.vue'

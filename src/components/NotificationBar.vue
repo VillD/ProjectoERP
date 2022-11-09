@@ -1,6 +1,5 @@
 <script setup>
 import { computed } from 'vue'
-import BaseButton from './BaseButton.vue'
 import BaseIcon from './BaseIcon.vue'
 const props = defineProps({
   title: {
@@ -20,7 +19,6 @@ const props = defineProps({
     default: null
   }
 })
-const closeNotificacion = computed(() => {})
 const changeTextColor = computed(() => {
   const style = {}
   const colorBar = `bg-${props.color}`

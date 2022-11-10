@@ -1,89 +1,73 @@
-<script setup></script>
+<script setup>
+import NavBarLink from './NavBarLink.vue'
+
+let itemMenu = [
+  {
+    to: '/dashboard/home',
+    icon: 'fa-solid fa-display',
+    label: 'Dashboard'
+  },
+  {
+    to: '/dashboard/table',
+    label: 'Tables',
+    icon: 'fa-solid fa-table'
+  },
+  {
+    to: '/dashboard/form',
+    label: 'Forms',
+    icon: 'fa-solid fa-pen-to-square'
+  },
+  {
+    to: '/dashboard/ui',
+    label: 'UI',
+    icon: 'fa-solid fa-display'
+  },
+  {
+    to: '/dashboard/profile',
+    label: 'Profile',
+    icon: 'fa-solid fa-user'
+  },
+  {
+    to: '/login',
+    label: 'Login',
+    icon: 'fa-solid fa-lock'
+  }
+  // {
+  //   label: 'Dropdown',
+  //   icon: 'fa-solid fa-plus',
+  //   menu: [
+  //     {
+  //       label: 'Item One'
+  //     },
+  //     {
+  //       label: 'Item Two'
+  //     }
+  //   ]
+  // }
+]
+</script>
 <template>
-  <aside class="h-screen md:p-2 w-60 text-slate-200 fixed top-0 left-0">
+  <aside
+    class="h-screen w-60 z-50 text-slate-200 fixed top-0 -left-60 md:py-2 md:pl-2 lg:left-0 lg:hidden xl:flex xl:flex-col"
+  >
     <!-- Container -->
     <div
       class="bg-slate-900 flex h-full flex-col md:rounded-2xl overflow-hidden"
     >
       <!-- Header -->
       <div class="h-14 flex justify-center items-center mb-4">
-        <h1 class="text-xl text-white font-bold">One</h1>
+        <h1 class="text-base text-white font-extrabold">One</h1>
       </div>
       <!-- Nav -->
       <div class="flex-1 overflow-y-auto">
         <ul class="flex flex-col gap-8">
-          <li class="cursor-pointer hover:text-white hover:font-bold">
-            <a
-              class="flex justify-between"
-              href=""
-              ><span class="inline-flex justify-center w-16 h-6 items-center"
-                ><font-awesome-icon icon="fa-solid fa-display"
-              /></span>
-              <p class="flex-grow">Dashboard</p>
-            </a>
-          </li>
-          <li class="cursor-pointer hover:text-white hover:font-bold">
-            <a
-              class="flex justify-between"
-              href=""
-              ><span class="inline-flex justify-center w-16 h-6 items-center"
-                ><font-awesome-icon icon="fa-solid fa-table"
-              /></span>
-              <p class="flex-grow">Tables</p></a
-            >
-          </li>
-          <li class="cursor-pointer hover:text-white hover:font-bold">
-            <a
-              class="flex justify-between"
-              href=""
-              ><span class="inline-flex justify-center w-16 h-6 items-center"
-                ><font-awesome-icon icon="fa-solid fa-pen-to-square"
-              /></span>
-              <p class="flex-grow">Forms</p></a
-            >
-          </li>
-          <li class="cursor-pointer hover:text-white hover:font-bold">
-            <div class="flex justify-between">
-              <span class="inline-flex justify-center w-16 h-6 items-center">
-                <font-awesome-icon icon="fa-solid fa-display" />
-              </span>
-              <p class="flex-grow"><router-link to="ui">UI</router-link></p>
-            </div>
-          </li>
-          <!-- <div><router-view></router-view></div> -->
-          <li class="cursor-pointer hover:text-white hover:font-bold">
-            <a
-              class="flex justify-between"
-              href=""
-              ><span class="inline-flex justify-center w-16 h-6 items-center"
-                ><font-awesome-icon icon="fa-solid fa-user"
-              /></span>
-              <p class="flex-grow">Profile</p></a
-            >
-          </li>
-          <li class="cursor-pointer hover:text-white hover:font-bold">
-            <a
-              class="flex justify-between"
-              href=""
-              ><span class="inline-flex justify-center w-16 h-6 items-center"
-                ><font-awesome-icon icon="fa-solid fa-list-ul"
-              /></span>
-              <p class="flex-grow">Dropdown</p>
-              <span class="flex-grow text-center"
-                ><font-awesome-icon icon="fa-solid fa-plus" /></span
-            ></a>
-          </li>
-          <li class="cursor-pointer hover:text-white">
-            <a
-              class="flex justify-between active:font-semibold"
-              href=""
-            >
-              <span class="inline-flex justify-center w-16 h-6 items-center">
-                <font-awesome-icon icon="fa-solid fa-lock" />
-              </span>
-              <p class="flex-grow">Login</p>
-            </a>
-          </li>
+          <NavBarLink
+            v-for="(item, k) in itemMenu"
+            :key="k"
+            :text="item.label"
+            :icon="item.icon"
+            :to="item.to"
+          />
         </ul>
       </div>
       <!-- Footer -->

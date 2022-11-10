@@ -1,6 +1,8 @@
 <script setup></script>
 <template>
-  <nav class="max-w-full h-14 bg-slate-800 xl:pl-60">
+  <nav
+    class="max-w-full h-14 bg-slate-800 xl:pl-60 top-0 left-0 right-0 fixed z-30 w-screen"
+  >
     <div class="flex md:max-w-md lg:max-w-4xl xl:max-w-6xl xl:mx-auto">
       <div class="flex flex-1 h-14 xl:justify-between">
         <!-- Icon Hamburger -->

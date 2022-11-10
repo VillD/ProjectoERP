@@ -33,7 +33,7 @@ const changeTextColor = computed(() => {
 <template>
   <div
     :class="changeTextColor"
-    class="rounded-md py-5 mb-6 last:mb-0 px-3 justify-between flex max-w-xs sm:max-w-md m-2 lg:max-w-4xl items-center text-white"
+    class="w-auto rounded-md py-5 mb-6 last:mb-0 px-3 m-2 text-white"
   >
     <!-- Left -->
     <BaseIcon :name="icon" />

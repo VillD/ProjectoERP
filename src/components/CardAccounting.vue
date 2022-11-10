@@ -1,5 +1,5 @@
 <script setup>
-import CardBasic from "./CardBasic.vue";
+import CardBasic from './CardBasic.vue'
 </script>
 <template>
   <div class="m-2">

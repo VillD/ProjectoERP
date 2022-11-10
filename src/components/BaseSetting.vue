@@ -18,7 +18,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <label class="flex pl-2 pb-2">
+  <label class="flex">
     <input
       v-model="computedValue"
       type="checkbox"

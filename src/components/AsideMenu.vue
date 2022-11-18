@@ -1,44 +1,49 @@
 <!-- eslint-disable no-unused-vars -->
 <script setup>
 import AsideMenuLink from './AsideMenuLink.vue'
-import { ref, computed } from 'vue'
-let itemMenu = [
+import { reactive } from 'vue'
+let items = reactive([
   {
     to: '/dashboard/home',
     icon: 'fa-solid fa-display',
     label: 'Dashboard',
+    drop: false
   },
   {
     to: '/dashboard/table',
     label: 'Tables',
     icon: 'fa-solid fa-table',
+    drop: false
   },
   {
     to: '/dashboard/form',
     label: 'Forms',
     icon: 'fa-solid fa-pen-to-square',
+    drop: false
   },
   {
     to: '/dashboard/ui',
     label: 'UI',
     icon: 'fa-solid fa-display',
+    drop: false
   },
   {
     to: '/dashboard/profile',
     label: 'Profile',
     icon: 'fa-solid fa-user',
+    drop: false
   },
   {
     to: '/login',
     label: 'Login',
     icon: 'fa-solid fa-lock',
+    drop: false
   },
   {
-    to: '/login',
     label: 'Dropdown',
     icon: 'fa-solid fa-plus',
-    desplejable: ref(false),
-    menu: [
+    drop: false,
+    children: [
       {
         to: '/login',
         label: 'Item One'
@@ -47,18 +52,9 @@ let itemMenu = [
         to: '/login',
         label: 'Item Two'
       }
-    ],
-    
+    ]
   }
-]
-const deplejar = ()=>{
-  let otro = itemMenu[6].desplejable.value
-  console.log( otro)
-  otro = !otro
-  console.log(otro)
-  return  otro
-}
-
+])
 </script>
 <template>
   <aside
@@ -74,29 +70,35 @@ const deplejar = ()=>{
       </div>
       <!-- Nav -->
       <div class="flex-1 overflow-y-auto">
-        <ul class="flex flex-col gap-8">
-          <AsideMenuLink
-            v-for="(item, k) in itemMenu"
+        <ul class="flex flex-col">
+          <template
+            v-for="(item, k) in items"
             :key="k"
-            :text="item.label"
-            :icon="item.icon"
-            :to="item.to"
-            @click="deplejar"
           >
-          
-        </AsideMenuLink>
-        <div class=" w-6 h-6 bg-slate-300" @click="deplejar"></div>
-        <div id="dropdownItems">
-          
-          <AsideMenuLink
-            v-for="(drop, k) in itemMenu[6].menu"
-            :key="k"
-            :text="drop.label"
-            :to="drop.to"
-          />
-        </div>
-        
-          
+            <!-- Items -->
+            <AsideMenuLink
+              class="py-4"
+              :text="item.label"
+              :icon="item.icon"
+              :to="item.to"
+              @click="item.drop = !item.drop"
+            >
+            </AsideMenuLink>
+            <!-- Children -->
+            <ul
+              v-if="item.children"
+              :class="item.drop ? '' : 'hidden'"
+              class="bg-slate-800/50"
+            >
+              <AsideMenuLink
+                v-for="(child, j) in item.children"
+                :key="j"
+                :text="child.label"
+                :to="child.to"
+                class="py-3 px-6 hover:text-white"
+              />
+            </ul>
+          </template>
         </ul>
       </div>
       <!-- Footer -->

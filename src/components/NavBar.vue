@@ -3,7 +3,7 @@
   <nav
     class="max-w-full h-14 bg-slate-800 xl:pl-60 top-0 left-0 right-0 fixed z-30 w-screen"
   >
-    <div class="flex md:max-w-md lg:max-w-4xl xl:max-w-6xl xl:mx-auto">
+    <div class="flex lg:items-stretch xl:max-w-6xl xl:mx-auto">
       <div class="flex flex-1 h-14 xl:justify-between">
         <!-- Icon Hamburger -->
         <div class="flex px-3 items-center text-white xl:hidden">
@@ -27,7 +27,9 @@
         <!--Input Search-->
 
         <!-- Menu de navegacion(SAMPLE MENU, PROFILE MENU, icons) -->
-        <div class="flex items-center">
+        <div
+          class="hidden items-center lg:overflow-visible lg:flex lg:flex-1 lg:justify-end"
+        >
           <div
             class="flex lg:px-3 lg:py-2 text-white hover:text-slate-400 cursor-pointer"
           >
@@ -75,7 +77,7 @@
         </div>
         <!-- Menu de navegacion(SAMPLE MENU, PROFILE MENU, icons) -->
       </div>
-      <div class="flex items-center flex-none h-14 text-white">
+      <div class="flex items-center flex-none h-14 text-white lg:hidden">
         <div class="px-3 xl:hidden">
           <span>
             <font-awesome-icon icon="fa-solid fa-ellipsis-vertical" />

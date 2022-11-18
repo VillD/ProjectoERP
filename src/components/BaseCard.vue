@@ -24,7 +24,7 @@ const showModal = ref(false)
 <template>
   <!-- Modal button -->
   <BaseButton
-    class="w-1/5 mr-2"
+    class="mr-2"
     :type="props.type"
     @click="showModal = true"
   >

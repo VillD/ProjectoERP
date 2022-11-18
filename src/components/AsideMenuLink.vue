@@ -15,14 +15,24 @@ const props = defineProps({
     default: null
   }
 })
+
+const linkStyle = props.icon ? 'w-16 h-6' : ''
 </script>
 <template>
   <li class="cursor-pointer hover:text-white flex justify-between">
-    <span class="inline-flex justify-center w-16 h-6 items-center">
+    <span
+      :class="linkStyle"
+      class="inline-flex justify-center items-center"
+    >
       <BaseIcon :name="props.icon" />
     </span>
     <p class="flex-grow font-light">
-      <router-link :to="props.to">{{ props.text }}</router-link>
+      <router-link
+        v-if="to"
+        :to="props.to"
+        >{{ props.text }}</router-link
+      >
+      <span v-else>{{ props.text }}</span>
     </p>
   </li>
 </template>

@@ -1,84 +1,87 @@
-<script setup>
-import NavBarLink from './NavBarLink.vue'
-
-let itemMenu = [
-  {
-    to: '/dashboard/home',
-    icon: 'fa-solid fa-display',
-    label: 'Dashboard'
-  },
-  {
-    to: '/dashboard/table',
-    label: 'Tables',
-    icon: 'fa-solid fa-table'
-  },
-  {
-    to: '/dashboard/form',
-    label: 'Forms',
-    icon: 'fa-solid fa-pen-to-square'
-  },
-  {
-    to: '/dashboard/ui',
-    label: 'UI',
-    icon: 'fa-solid fa-display'
-  },
-  {
-    to: '/dashboard/profile',
-    label: 'Profile',
-    icon: 'fa-solid fa-user'
-  },
-  {
-    to: '/login',
-    label: 'Login',
-    icon: 'fa-solid fa-lock'
-  }
-  // {
-  //   label: 'Dropdown',
-  //   icon: 'fa-solid fa-plus',
-  //   menu: [
-  //     {
-  //       label: 'Item One'
-  //     },
-  //     {
-  //       label: 'Item Two'
-  //     }
-  //   ]
-  // }
-]
-</script>
+<script setup></script>
 <template>
-  <aside
-    class="h-screen w-60 z-50 text-slate-200 fixed top-0 -left-60 md:py-2 md:pl-2 lg:left-0 lg:hidden xl:flex xl:flex-col"
+  <nav
+    class="max-w-full h-14 bg-slate-800 xl:pl-60 top-0 left-0 right-0 fixed z-30 w-screen"
   >
-    <!-- Container -->
-    <div
-      class="bg-slate-900 flex h-full flex-col md:rounded-2xl overflow-hidden"
-    >
-      <!-- Header -->
-      <div class="h-14 flex justify-center items-center mb-4">
-        <h1 class="text-base text-white font-extrabold">One</h1>
+    <div class="flex md:max-w-md lg:max-w-4xl xl:max-w-6xl xl:mx-auto">
+      <div class="flex flex-1 h-14 xl:justify-between">
+        <!-- Icon Hamburger -->
+        <div class="flex px-3 items-center text-white xl:hidden">
+          <span>
+            <font-awesome-icon icon="fa-solid fa-bars" />
+          </span>
+        </div>
+        <!-- Icon Hamburger -->
+        <!--Input Search-->
+        <div
+          class="flex my-2 mx-3 items-center text-white hover:text-slate-400"
+        >
+          <div class="relative">
+            <input
+              class="border-gray-600 h-12 px-3 py-2 focus:outline-none bg-transparent"
+              placeholder="Serach"
+              type="text"
+            />
+          </div>
+        </div>
+        <!--Input Search-->
+
+        <!-- Menu de navegacion(SAMPLE MENU, PROFILE MENU, icons) -->
+        <div class="flex items-center">
+          <div
+            class="flex lg:px-3 lg:py-2 text-white hover:text-slate-400 cursor-pointer"
+          >
+            <div class="flex items-center">
+              <span class="flex items-center justify-center w-6 h-6"
+                ><font-awesome-icon icon="fa-solid fa-bars"
+              /></span>
+              <span class="px-2">Sample Menu</span>
+              <span class="flex items-center justify-center w-6 h-6"
+                ><font-awesome-icon icon="fa-solid fa-angle-down"
+              /></span>
+            </div>
+            <div></div>
+          </div>
+          <div
+            class="flex lg:px-3 lg:py-2 text-white hover:text-slate-400 cursor-pointer"
+          >
+            <span class="flex items-center justify-center w-6 h-6"
+              ><img
+                class=""
+                src="src/assets/avatar.svg"
+                alt=""
+            /></span>
+            <span class="px-2">Jhon Doe</span>
+            <span class="flex items-center justify-center w-6 h-6"
+              ><font-awesome-icon icon="fa-solid fa-angle-down"
+            /></span>
+          </div>
+          <ul class="flex text-white">
+            <li class="hover:text-slate-400 cursor-pointer lg:px-3 lg:py-2">
+              <a
+                href=""
+                class="flex items-center justify-center w-6 h-6"
+                ><font-awesome-icon icon="fa-solid fa-circle-half-stroke"
+              /></a>
+            </li>
+            <li class="hover:text-slate-400 cursor-pointer lg:px-3 lg:py-2">
+              <a
+                href=""
+                class="flex items-center justify-center w-6 h-6"
+                ><font-awesome-icon icon="fa-solid fa-arrow-right-to-bracket"
+              /></a>
+            </li>
+          </ul>
+        </div>
+        <!-- Menu de navegacion(SAMPLE MENU, PROFILE MENU, icons) -->
       </div>
-      <!-- Nav -->
-      <div class="flex-1 overflow-y-auto">
-        <ul class="flex flex-col gap-8">
-          <NavBarLink
-            v-for="(item, k) in itemMenu"
-            :key="k"
-            :text="item.label"
-            :icon="item.icon"
-            :to="item.to"
-          />
-        </ul>
-      </div>
-      <!-- Footer -->
-      <div
-        class="hover:text-white transition flex justify-between py-4 bg-blue-500 hover:bg-blue-600 cursor-pointer"
-      >
-        <span class="inline-flex justify-center w-16 h-6 items-center">
-          <font-awesome-icon icon="fa-solid fa-arrow-right-to-bracket" />
-        </span>
-        <p class="flex-grow">Logout</p>
+      <div class="flex items-center flex-none h-14 text-white">
+        <div class="px-3 xl:hidden">
+          <span>
+            <font-awesome-icon icon="fa-solid fa-ellipsis-vertical" />
+          </span>
+        </div>
       </div>
     </div>
-  </aside>
+  </nav>
 </template>

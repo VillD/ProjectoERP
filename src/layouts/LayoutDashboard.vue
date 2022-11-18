@@ -1,14 +1,14 @@
 <script setup>
 import FooterComponent from '../components/FooterComponent.vue'
-import NavBar from '../components/NavBar.vue'
-import NavComponent from '../components/NavComponent.vue'
+import AsideMenu from '../components/AsideMenu.vue'
+import NavComponent from '../components/NavBar.vue'
 </script>
 <template>
   <div
     class="bg-slate-800 pt-14 xl:pl-60 w-screen transition-position lg:w-auto"
   >
     <NavComponent />
-    <NavBar />
+    <AsideMenu />
     <router-view></router-view>
     <FooterComponent />
   </div>

@@ -13,7 +13,7 @@ import {
   faUsers,
   faChevronUp,
   faGear,
-  faMoneyBill1,
+  faMoneyBill,
   faArrowRight,
   faArrowUpRightFromSquare,
   faCircleInfo,
@@ -32,7 +32,11 @@ import {
   faEllipsisVertical,
   faAngleDown,
   faCircleHalfStroke,
-  faArrowTrendUp
+  faArrowTrendUp,
+  faUserGroup,
+  faCartShopping,
+  faCreditCard,
+  faPaste
 } from '@fortawesome/free-solid-svg-icons'
 
 import { faLock } from '@fortawesome/free-solid-svg-icons'
@@ -42,7 +46,7 @@ library.add(
   faBars,
   faChevronUp,
   faGear,
-  faMoneyBill1,
+  faMoneyBill,
   faArrowRight,
   faArrowUpRightFromSquare,
   faCircleInfo,
@@ -60,7 +64,11 @@ library.add(
   faLock,
   faAngleDown,
   faCircleHalfStroke,
-  faArrowTrendUp
+  faArrowTrendUp,
+  faUserGroup,
+  faCartShopping,
+  faCreditCard,
+  faPaste
 )
 
 const app = createApp(App)

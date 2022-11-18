@@ -104,7 +104,7 @@ const buttons = ref([
   </section>
 
   <section class="p-6 xl:max-w-6xl xl:mx-auto">
-    <div class="bg-slate-900/70 rounded-xl m-2 lg:max-w-4xl flex-wrap p-6">
+    <div class="bg-slate-900/70 rounded-xl m-2 flex-wrap p-6 lg:flex-1">
       <h1 class="text-lg font-semibold text-white pb-2">Settings</h1>
       <div class="flex flex-wrap mb-6">
         <BaseSetting
@@ -170,7 +170,7 @@ const buttons = ref([
   </section>
 
   <section class="p-6 xl:max-w-6xl xl:mx-auto">
-    <div class="bg-slate-900/70 rounded-xl mx-2 p-6 lg:max-w-4xl">
+    <div class="bg-slate-900/70 rounded-xl mx-2 p-6 lg:flex-1">
       <h1 class="text-lg font-semibold text-white pb-2">Settings</h1>
       <div class="flex mb-6 flex-wrap">
         <BaseSetting

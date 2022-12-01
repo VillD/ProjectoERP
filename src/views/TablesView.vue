@@ -1,6 +1,7 @@
 <script setup>
 import BaseIcon from '../components/BaseIcon.vue'
-import TableClients from '../components/TableClients.vue'
+import BaseTable from '../components/BaseTable.vue'
+import DataTable from '../components/DataTable.vue'
 </script>
 <template>
   <div class="p-6 xl:max-w-6xl xl:mx-auto">
@@ -17,7 +18,7 @@ import TableClients from '../components/TableClients.vue'
     </div>
     <div class="flex mb-6 gap-6 flex-col lg:flex-row">
       <div class="bg-slate-900/70 rounded-2xl flex-1 text-white">
-        <TableClients />
+        <DataTable />
       </div>
     </div>
   </div>

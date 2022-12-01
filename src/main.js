@@ -39,7 +39,8 @@ import {
   faPaste,
   faTrashCan,
   faEye,
-  faCheck
+  faCheck,
+  faSort
 } from '@fortawesome/free-solid-svg-icons'
 
 import { faLock } from '@fortawesome/free-solid-svg-icons'
@@ -74,7 +75,8 @@ library.add(
   faPaste,
   faTrashCan,
   faEye,
-  faCheck
+  faCheck,
+  faSort
 )
 
 const app = createApp(App)

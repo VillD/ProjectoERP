@@ -1,40 +1,35 @@
 <script setup>
 import BaseIcon from './BaseIcon.vue'
-import { ref, computed } from 'vue'
+import { ref, watch } from 'vue'
 
-const emit = defineEmits(['update:checkValue'])
+const emit = defineEmits(['checked'])
 
-const checkValue = ref(false)
+const checked = ref(false)
 
-const checkable = computed({
-  get: () => checkValue,
-  set: (value) => {
-    checkValue.value = value
-    emit('update:checkValue', value)
-  }
-})
-const addIcon = computed(() => {
-  let style = {}
-  let normal = ''
-  checkValue.value
-    ? style[(normal += " before:content-['*'] before:text-xl")]
-    : style[normal]
-  return normal
+// const addIcon = () => {
+//    let style = {}
+//   let normal = ''
+//   checked.value
+//     ? style[(normal += " before:content-['*'] before:text-xl")]
+//     : style[normal]
+//   return normal
+// }
+
+watch(checked, (newVal) => {
+  emit('checked', newVal)
 })
 </script>
 <template>
-  <!-- <div class="w-6 h-6 relative flex justify-center items-center"> -->
-  <input
-    v-model="checkable"
-    :class="addIcon"
-    type="checkbox"
-    class="appearance-none flex items-center justify-center text-white p-1 rounded w-5 h-5 bg-slate-700 checked:bg-blue-500 cursor-pointer"
-  />
-  <!-- <BaseIcon
-      v-if="checkValue"
-      class="absolute cursor-pointer"
+  <div class="w-6 h-6 relative flex justify-center items-center">
+    <input
+      v-model="checked"
+      type="checkbox"
+      class="appearance-none flex items-center justify-center text-white p-1 rounded w-5 h-5 bg-slate-700 checked:bg-blue-500 cursor-pointer"
+    />
+    <BaseIcon
+      v-if="checked"
+      class="absolute cursor-pointer text-white"
       name="fa-solid fa-check"
-      @click="checkValue = !checkValue"
-    /> -->
-  <!-- </div> -->
+    />
+  </div>
 </template>

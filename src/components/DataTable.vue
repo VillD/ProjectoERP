@@ -1,6 +1,6 @@
 <script setup>
 import BaseTable from './BaseTable.vue'
-import { reactive, computed } from 'vue'
+import { reactive } from 'vue'
 const columns = ['Name', 'Company', 'City', 'Progress', 'Created']
 const entries = reactive([
   {
@@ -88,5 +88,7 @@ let showEntries = [5, 10, 15, 20]
     :columns="columns"
     :entries="entries"
     :options="showEntries"
+    :search="false"
+    :checkable="true"
   />
 </template>

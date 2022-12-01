@@ -5,6 +5,7 @@ import BaseButton from './BaseButton.vue'
 import BaseCard from './BaseCard.vue'
 import BaseIcon from './BaseIcon.vue'
 import TableCheckbox from './TableCheckbox.vue'
+import UserAvatar from './UserAvatar.vue'
 
 const props = defineProps({
   columns: {
@@ -23,7 +24,11 @@ const props = defineProps({
     type: Number,
     default: null
   },
-  checkable: Boolean
+  checkable: Boolean,
+  search: {
+    type: Boolean,
+    default: false
+  }
 })
 const searchText = ref('')
 const currentEntries = ref(5)
@@ -89,7 +94,10 @@ const checked = (isChecked, client) => {
       </select>
     </div>
 
-    <div class="w-1/4">
+    <div
+      v-if="search"
+      class="w-1/4"
+    >
       <input
         v-model="searchText"
         type="text"
@@ -114,7 +122,7 @@ const checked = (isChecked, client) => {
   <table class="w-full">
     <thead>
       <tr>
-        <th />
+        <th v-if="checkable" />
         <th />
         <th
           v-for="(th, index) in props.columns"
@@ -134,10 +142,18 @@ const checked = (isChecked, client) => {
         v-for="(td, k) in searching"
         :key="k"
       >
-        <td class="flex justify-center items-center">
+        <td
+          v-if="checkable"
+          class="flex justify-center items-center h-full"
+        >
           <TableCheckbox @checked="checked($event, td)" />
         </td>
-        <td></td>
+        <td class="border-b-0 lg:w-6 before:hidden">
+          <UserAvatar
+            :username="td.name"
+            class="w-24 h-24 mx-auto lg:w-6 lg:h-6"
+          />
+        </td>
         <td>{{ td.name }}</td>
         <td>{{ td.company }}</td>
         <td>{{ td.city }}</td>

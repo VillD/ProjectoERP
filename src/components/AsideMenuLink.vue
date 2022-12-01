@@ -36,7 +36,7 @@ const linkStyle = props.icon ? 'w-16 h-6' : ''
     </p>
   </li>
 </template>
-<style scoped>
+<style>
 .router-link-active {
   font-weight: 700;
   color: white;

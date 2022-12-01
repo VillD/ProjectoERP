@@ -20,7 +20,7 @@ watch(checked, (newVal) => {
 })
 </script>
 <template>
-  <div class="w-6 h-6 relative flex justify-center items-center">
+  <div class="w-5 h-5 relative flex justify-center items-center">
     <input
       v-model="checked"
       type="checkbox"

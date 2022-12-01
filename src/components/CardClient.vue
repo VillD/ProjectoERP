@@ -1,5 +1,6 @@
 <script setup>
 import ButtonPill from './ButtonPill.vue'
+import UserAvatar from './UserAvatar.vue'
 const props = defineProps({
   name: {
     type: String,
@@ -34,7 +35,7 @@ const props = defineProps({
       <div
         class="flex justify-center items-center md:mr-6 w-12 h-12 bg-slate-800 rounded-full"
       >
-        <span class="w-6 h-6 bg-slate-400"></span>
+        <UserAvatar :username="name" />
       </div>
     </div>
 

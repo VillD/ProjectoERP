@@ -105,10 +105,11 @@ let items = reactive([
       <div
         class="hover:text-white transition flex justify-between py-4 bg-blue-500 hover:bg-blue-600 cursor-pointer"
       >
-        <span class="inline-flex justify-center w-16 h-6 items-center">
-          <font-awesome-icon icon="fa-solid fa-arrow-right-to-bracket" />
-        </span>
-        <p class="flex-grow">Logout</p>
+        <AsideMenuLink
+          text="Logout"
+          icon="fa-solid fa-arrow-right-to-bracket"
+          class="font-normal"
+        />
       </div>
     </div>
   </aside>

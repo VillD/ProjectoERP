@@ -40,7 +40,9 @@ import {
   faTrashCan,
   faEye,
   faCheck,
-  faSort
+  faSort,
+  faClock,
+  faCloud
 } from '@fortawesome/free-solid-svg-icons'
 
 import { faLock } from '@fortawesome/free-solid-svg-icons'
@@ -76,7 +78,9 @@ library.add(
   faTrashCan,
   faEye,
   faCheck,
-  faSort
+  faSort,
+  faClock,
+  faCloud
 )
 
 const app = createApp(App)

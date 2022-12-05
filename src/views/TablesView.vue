@@ -1,6 +1,5 @@
 <script setup>
 import BaseIcon from '../components/BaseIcon.vue'
-import BaseTable from '../components/BaseTable.vue'
 import DataTable from '../components/DataTable.vue'
 </script>
 <template>

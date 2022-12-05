@@ -1,7 +1,7 @@
 <script setup>
 import BaseTable from './BaseTable.vue'
 import { reactive } from 'vue'
-const columns = ['Name', 'Company', 'City', 'Progress', 'Created']
+const columns = ['id', 'Name', 'Company', 'City', 'Progress', 'Created']
 const entries = reactive([
   {
     name: 'Daniel Hand',
@@ -137,14 +137,19 @@ const entries = reactive([
     created: 'Mar 3, 2021'
   }
 ])
-let showEntries = [5, 10, 15, 20]
+function addId() {
+  for (let i = 0; i < entries.length; i++) {
+    entries[i].id = i
+  }
+}
+addId()
 </script>
 <template>
   <BaseTable
     :columns="columns"
     :entries="entries"
-    :options="showEntries"
-    :search="false"
-    :checkable="true"
+    :num-entries="[5, 10, 15, 20]"
+    :search="true"
+    :checkable="false"
   />
 </template>

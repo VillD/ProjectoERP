@@ -1,7 +1,24 @@
-<script></script>
+<script setup>
+import BaseIcon from '../components/BaseIcon.vue'
+import FormExample from '../components/FormExample.vue'
+</script>
 <template>
-  <div class="flex">
-    <font-awesome-icon icon="fa-solid fa-pen-to-square" />
-    <h1>Forms example</h1>
+  <div class="p-6 xl:max-w-6xl xl:mx-auto">
+    <div class="flex items-center text-white mb-6">
+      <span
+        class="w-12 h-12 rounded-full bg-slate-900/70 mr-3 inline-flex justify-center items-center"
+      >
+        <BaseIcon
+          class="w-6 h-6"
+          name="fa-rectangle-list"
+        />
+      </span>
+      <h1 class="text-3xl">Tables</h1>
+    </div>
+    <div class="flex mb-6 gap-6 flex-col lg:flex-row">
+      <div class="bg-slate-900/70 rounded-2xl flex-1 text-white">
+        <FormExample />
+      </div>
+    </div>
   </div>
 </template>

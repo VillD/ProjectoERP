@@ -43,7 +43,8 @@ import {
   faSort,
   faClock,
   faCloud,
-  faLock
+  faLock,
+  faRectangleList
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -80,7 +81,8 @@ library.add(
   faSort,
   faClock,
   faCloud,
-  faLock
+  faLock,
+  faRectangleList
 )
 
 const app = createApp(App)

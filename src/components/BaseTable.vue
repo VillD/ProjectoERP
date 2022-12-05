@@ -16,7 +16,7 @@ const props = defineProps({
     type: Array,
     default: null
   },
-  options: {
+  numEntries: {
     type: Array,
     default: null
   },
@@ -28,57 +28,73 @@ const props = defineProps({
 })
 const searchText = ref('')
 
-const currentEntries = ref(5)
+const currentEntries = ref(props.numEntries[0])
+const currentPage = ref(1)
+const currentPageHuman = computed(() => currentPage.value + 1)
 
 const checkedRows = ref([])
 
 const sortKey = ref('')
 const sortOrders = ref(props.columns.reduce((o, key) => ((o[key] = 1), o), {}))
 
-let elmInPage = ref(5)
+const resetCurrentPage = () => {
+  currentPage.value = 1
+  // currentEntries.value = val
+}
 
 const totalPaginas = computed(() => {
-  return Math.ceil(props.entries.length / currentEntries.value)
+  const pageList = []
+  let numberPage = Math.ceil(props.entries.length / currentEntries.value)
+  // console.log(numberPage)
+  for (let i = 1; i <= numberPage; i++) {
+    pageList.push(i)
+  }
+  // console.log(pageList)
+  return pageList
 })
 
-const searching = computed((page) => {
+const filtersTable = computed(() => {
   let { entries } = props
   if (searchText.value) {
-    entries = entries.filter((item) => {
-      return Object.keys(item).some((key) => {
-        return (
-          String(item[key])
-            .toLowerCase()
-            .indexOf(searchText.value.toLowerCase()) > -1
-        )
-      })
-    })
-  }
-  const key = sortKey.value
+    // entries = entries.filter((item) => {
+    //   return Object.keys(item).some((key) => {
+    //     return (
+    //       String(item[key])
+    //         .toLowerCase()
+    //         .indexOf(searchText.value.toLowerCase()) > -1
+    //     )
+    //   })
+    // })
 
-  if (key) {
-    const order = sortOrders.value[key]
-    entries = entries.slice().sort((a, b) => {
-      a = a[key]
-      b = b[key]
-
-      return (a === b ? 0 : a > b ? 1 : -1) * order
-    })
+    entries = entries.filter((item) =>
+      String(item.name).toLowerCase().includes(searchText.value.toLowerCase())
+    )
   }
+  // const key = sortKey.value
 
-  if (currentEntries.value == 5) {
-    return entries.slice(0, 5)
-  } else if (currentEntries.value == 10) {
-    return entries.slice(0, 10)
-  } else if (currentEntries.value == 15) {
-    return entries.slice(0, 15)
-  } else if (currentEntries.value == 20) {
-    return entries.slice(0, 20)
-  }
+  // if (key) {
+  //   const order = sortOrders.value[key]
+  //   entries = entries.slice().sort((a, b) => {
+  //     a = a[key]
+  //     b = b[key]
+
+  //     return (a === b ? 0 : a > b ? 1 : -1) * order
+  //   })
+  // }
+
+  const numEntries = Number(currentEntries.value)
+  const pageNum = Number(currentPage.value)
+  const start = numEntries * (pageNum - 1)
+  const end = start + numEntries
+  // console.log('values', currentEntries.value, currentPage.value)
+  // console.log('slice', start, end)
+
+  return entries.slice(start, end)
 
   // item.name.toLowerCase().indexOf(searchText.value.toLowerCase()) != -1
-  return entries
+  // return entries
 })
+
 function sortBy(key) {
   sortKey.value = key
   sortOrders.value[key] *= -1
@@ -107,22 +123,26 @@ const checked = (isChecked, client) => {
 </script>
 
 <template>
+  <!-- Filters-->
   <div class="flex justify-between px-3 py-6">
+    <!-- Filter for rows numbers -->
     <div class="items-center">
       <span class="mr-2">Show:</span>
       <select
         v-model="currentEntries"
         class="bg-slate-700/70 rounded-lg p-1"
+        @change="resetCurrentPage"
       >
         <option
-          v-for="option in options"
-          :key="option"
+          v-for="(num, index) of numEntries"
+          :key="index"
         >
-          {{ option }}
+          {{ num }}
         </option>
       </select>
     </div>
 
+    <!-- Filter for name -->
     <div
       v-if="search"
       class="w-1/4"
@@ -135,6 +155,8 @@ const checked = (isChecked, client) => {
       />
     </div>
   </div>
+
+  <!-- Container of selected of table -->
   <div
     v-if="checkedRows.length"
     class="p-3 bg-gray-100/50 dark:bg-slate-800"
@@ -147,9 +169,9 @@ const checked = (isChecked, client) => {
       {{ checkedRow.name }}
     </span>
   </div>
-  <div class="text-white"></div>
+
   <table
-    v-if="searching.length"
+    v-if="filtersTable.length"
     class="w-full"
   >
     <thead>
@@ -172,31 +194,32 @@ const checked = (isChecked, client) => {
     </thead>
     <tbody>
       <tr
-        v-for="(td, k) in searching"
+        v-for="(item, k) in filtersTable"
         :key="k"
       >
         <td
           v-if="checkable"
           class="flex justify-center items-center h-full"
         >
-          <TableCheckbox @checked="checked($event, td)" />
+          <TableCheckbox @checked="checked($event, item)" />
         </td>
         <td class="border-b-0 lg:w-6 before:hidden">
           <UserAvatar
-            :username="td.name"
+            :username="item.name"
             class="w-24 h-24 mx-auto lg:w-6 lg:h-6"
           />
         </td>
-        <td>{{ td.name }}</td>
-        <td>{{ td.company }}</td>
-        <td>{{ td.city }}</td>
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.company }}</td>
+        <td>{{ item.city }}</td>
         <td>
           <progress
-            :value="td.progress"
+            :value="item.progress"
             max="100"
           ></progress>
         </td>
-        <td>{{ td.created }}</td>
+        <td>{{ item.created }}</td>
         <td class="flex justify-around pr-0">
           <BaseCard><font-awesome-icon icon="fa-solid fa-eye" /></BaseCard>
           <BaseCard type="danger"
@@ -211,15 +234,16 @@ const checked = (isChecked, client) => {
   >
     <div class="grow-0">
       <BaseButton
-        v-for="other in totalPaginas"
-        :key="other"
-        class="mr-3"
+        v-for="page in totalPaginas"
+        :key="page"
+        class="mr-3 hover:bg-slate-600 transition-colors duration-200"
         type="dark"
-        >{{ other }}</BaseButton
-      >
+        @click="currentPage = page"
+        >{{ page }}
+      </BaseButton>
     </div>
     <div>
-      <span>Page 1 of 4</span>
+      <span>Page {{ currentPageHuman }} of {{ totalPaginas.length }}</span>
     </div>
   </div>
 </template>

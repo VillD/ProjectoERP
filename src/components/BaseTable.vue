@@ -20,10 +20,6 @@ const props = defineProps({
     type: Array,
     default: null
   },
-  selectedOption: {
-    type: Number,
-    default: null
-  },
   checkable: Boolean,
   search: {
     type: Boolean,
@@ -31,11 +27,21 @@ const props = defineProps({
   }
 })
 const searchText = ref('')
+
 const currentEntries = ref(5)
 
 const checkedRows = ref([])
 
-const searching = computed(() => {
+const sortKey = ref('')
+const sortOrders = ref(props.columns.reduce((o, key) => ((o[key] = 1), o), {}))
+
+let elmInPage = ref(5)
+
+const totalPaginas = computed(() => {
+  return Math.ceil(props.entries.length / currentEntries.value)
+})
+
+const searching = computed((page) => {
   let { entries } = props
   if (searchText.value) {
     entries = entries.filter((item) => {
@@ -48,13 +54,38 @@ const searching = computed(() => {
       })
     })
   }
+  const key = sortKey.value
+
+  if (key) {
+    const order = sortOrders.value[key]
+    entries = entries.slice().sort((a, b) => {
+      a = a[key]
+      b = b[key]
+
+      return (a === b ? 0 : a > b ? 1 : -1) * order
+    })
+  }
+
+  if (currentEntries.value == 5) {
+    return entries.slice(0, 5)
+  } else if (currentEntries.value == 10) {
+    return entries.slice(0, 10)
+  } else if (currentEntries.value == 15) {
+    return entries.slice(0, 15)
+  } else if (currentEntries.value == 20) {
+    return entries.slice(0, 20)
+  }
+
   // item.name.toLowerCase().indexOf(searchText.value.toLowerCase()) != -1
   return entries
 })
+function sortBy(key) {
+  sortKey.value = key
+  sortOrders.value[key] *= -1
+}
 
 const remove = (arr, cb) => {
   const newArr = []
-
   arr.forEach((item) => {
     if (!cb(item)) {
       newArr.push(item)
@@ -82,12 +113,10 @@ const checked = (isChecked, client) => {
       <select
         v-model="currentEntries"
         class="bg-slate-700/70 rounded-lg p-1"
-        @change="paginateEntries"
       >
         <option
           v-for="option in options"
           :key="option"
-          :value="option"
         >
           {{ option }}
         </option>
@@ -119,15 +148,19 @@ const checked = (isChecked, client) => {
     </span>
   </div>
   <div class="text-white"></div>
-  <table class="w-full">
+  <table
+    v-if="searching.length"
+    class="w-full"
+  >
     <thead>
       <tr>
         <th v-if="checkable" />
         <th />
         <th
-          v-for="(th, index) in props.columns"
-          :key="index"
+          v-for="th in columns"
+          :key="th"
           class="cursor-pointer"
+          @click="sortBy(th)"
         >
           {{ th }}
           <BaseIcon
@@ -178,24 +211,11 @@ const checked = (isChecked, client) => {
   >
     <div class="grow-0">
       <BaseButton
+        v-for="other in totalPaginas"
+        :key="other"
         class="mr-3"
         type="dark"
-        >1</BaseButton
-      >
-      <BaseButton
-        class="mr-3"
-        type="dark"
-        >2</BaseButton
-      >
-      <BaseButton
-        class="mr-3"
-        type="dark"
-        >3</BaseButton
-      >
-      <BaseButton
-        class="mr-3"
-        type="dark"
-        >4</BaseButton
+        >{{ other }}</BaseButton
       >
     </div>
     <div>

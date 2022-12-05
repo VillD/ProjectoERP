@@ -42,14 +42,12 @@ import {
   faCheck,
   faSort,
   faClock,
-  faCloud
+  faCloud,
+  faLock
 } from '@fortawesome/free-solid-svg-icons'
 
-import { faLock } from '@fortawesome/free-solid-svg-icons'
 library.add(
   faUsers,
-  faEllipsisVertical,
-  faBars,
   faChevronUp,
   faGear,
   faMoneyBill,
@@ -65,9 +63,10 @@ library.add(
   faUser,
   faPenToSquare,
   faTable,
-  faListUl,
   faPlus,
-  faLock,
+  faListUl,
+  faBars,
+  faEllipsisVertical,
   faAngleDown,
   faCircleHalfStroke,
   faArrowTrendUp,
@@ -80,7 +79,8 @@ library.add(
   faCheck,
   faSort,
   faClock,
-  faCloud
+  faCloud,
+  faLock
 )
 
 const app = createApp(App)

@@ -79,6 +79,62 @@ const entries = reactive([
     city: 'Emelyside',
     progress: 30,
     created: 'Mar 3, 2021'
+  },
+  {
+    name: 'Rosa Miro',
+    company: 'Coca-Green',
+    city: 'Emelyside',
+    progress: 30,
+    created: 'Mar 3, 2021'
+  },
+  {
+    name: 'Rosa Miro',
+    company: 'Coca-Green',
+    city: 'Emelyside',
+    progress: 30,
+    created: 'Mar 3, 2021'
+  },
+  {
+    name: 'Rosa Miro',
+    company: 'Coca-Green',
+    city: 'Emelyside',
+    progress: 30,
+    created: 'Mar 3, 2021'
+  },
+  {
+    name: 'Paquito Benite',
+    company: 'Coca-Green',
+    city: 'Emelyside',
+    progress: 30,
+    created: 'Mar 3, 2021'
+  },
+  {
+    name: 'Rosa Miro',
+    company: 'Coca-Green',
+    city: 'Emelyside',
+    progress: 30,
+    created: 'Mar 3, 2021'
+  },
+  {
+    name: 'Rosa Miro',
+    company: 'Coca-Green',
+    city: 'Emelyside',
+    progress: 30,
+    created: 'Mar 3, 2021'
+  },
+  {
+    name: 'Rosa Miro',
+    company: 'Coca-Green',
+    city: 'Emelyside',
+    progress: 30,
+    created: 'Mar 3, 2021'
+  },
+  {
+    name: 'Rosa Miro',
+    company: 'Coca-Green',
+    city: 'Emelyside',
+    progress: 30,
+    created: 'Mar 3, 2021'
   }
 ])
 let showEntries = [5, 10, 15, 20]

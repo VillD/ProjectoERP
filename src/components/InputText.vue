@@ -1,15 +1,18 @@
 <script setup>
 import BaseIcon from './BaseIcon.vue'
 defineProps({
-  textShadow: String,
+  textGhost: String,
   icon: {
     type: String,
     default: null
   },
-  text: String,
+  text: {
+    type: String,
+    default: null
+  },
   typeInput: {
     type: String,
-    required: true
+    default: null
   }
 })
 </script>
@@ -17,15 +20,18 @@ defineProps({
   <div class="relative">
     <input
       :type="typeInput"
-      :placeholder="textShadow"
-      :value="text"
+      :placeholder="textGhost"
       :class="icon ? 'pl-10' : 'px-3'"
       class="h-12 border border-gray-700 bg-slate-800 text-white w-full rounded"
     />
-    <BaseIcon
-      v-if="icon"
-      :name="icon"
-      class="text-white absolute"
-    />
+    <div
+      class="absolute left-0 top-0 w-10 h-12 flex justify-center items-center"
+    >
+      <BaseIcon
+        v-if="icon"
+        :name="icon"
+        class="text-xs text-slate-400"
+      />
+    </div>
   </div>
 </template>

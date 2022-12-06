@@ -1,53 +1,62 @@
 <script setup>
 import InputText from './InputText.vue'
+import InputSelect from './InputSelect.vue'
+import FormField from './FormField.vue'
+import InputTextArea from './InputTextArea.vue'
+import BaseButton from './BaseButton.vue'
+import FormCheck from './FormCheck.vue'
 </script>
 <template>
   <div class="p-6">
     <form
       action=""
-      class="flex flex-col gap-6"
+      class=""
     >
-      <div>
-        <label class="font-bold">Grouped with icons</label>
-        <div class="flex justify-between mt-2">
+      <FormField label="Grouped with icons">
+        <div class="flex justify-between mt-2 gap-4">
           <InputText
             type-input="text"
-            value="John Doe"
-            icon="faUser"
-            class="w-2/5"
+            icon="fa-user"
+            class="w-full"
           />
           <InputText
             type-input="text"
-            icon=""
-            value="john.doe@example.com"
-            class="w-2/5"
+            icon="fa-rectangle-list"
+            class="w-full"
           />
         </div>
-      </div>
+      </FormField>
 
-      <div class="mt-2">
-        <label class="font-bold">With help line</label>
+      <FormField
+        label="With help line"
+        help="Do not enter the leading zero"
+      >
         <InputText
           type-input="text"
-          value="John Doe"
-          class="w-full"
-          text-shadow="Your phone number"
+          class="w-full mt-2"
+          text-ghost="Your phone number"
         />
-        <p class="text-slate-400 mt-1 text-xs">Do not enter the leading zero</p>
-      </div>
+      </FormField>
 
-      <label class="font-bold">With help line</label>
-      <div class="mt-2">
-        <input
-          type="checkbox"
-          name=""
+      <FormField label="Dropdown">
+        <InputSelect
+          :value-opions="['Business development', 'Marketing', 'Sales']"
+          class="mt-2"
         />
-        <InputText
-          type-input="password"
-          value="John Doe"
-          class="w-full"
-        />
-        <p class="text-slate-400 mt-1 text-xs">Do not enter the leading zero</p>
+      </FormField>
+
+      <hr class="my-6 -mx-6 border-slate-800 border-t" />
+
+      <FormField
+        label="Question"
+        help="Your question. Max 255 characters"
+      >
+        <InputTextArea text-ghost="Explain how we can help you" />
+      </FormField>
+      <FormField label="Checkbox"><FormCheck /> </FormField>
+      <div class="flex gap-4 py-6">
+        <BaseButton>Submit</BaseButton>
+        <BaseButton outline>Reset</BaseButton>
       </div>
     </form>
   </div>

@@ -150,6 +150,6 @@ addId()
     :entries="entries"
     :num-entries="[5, 10, 15, 20]"
     :search="true"
-    :checkable="false"
+    :checkable="true"
   />
 </template>

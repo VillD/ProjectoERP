@@ -77,8 +77,8 @@ import CardClient from '../components/CardClient.vue'
           class="flex bg-slate-900/70 rounded-2xl p-6 justify-between items-center mb-6 hover:shadow-lg transition-shadow"
         >
           <CardTransaction
-            amount="971.34"
             iconWidget="fa-solid fa-credit-card"
+            amount="971.34"
             date="5 days ago"
             business="via Fahey - Keebler"
             name="Savings Account"

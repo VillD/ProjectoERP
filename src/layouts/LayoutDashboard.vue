@@ -9,7 +9,7 @@ import NavComponent from '../components/NavBar.vue'
   >
     <NavComponent />
     <AsideMenu />
-    <router-view></router-view>
+    <router-view class="min-h-screen"></router-view>
     <FooterComponent />
   </div>
 </template>

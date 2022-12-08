@@ -2,6 +2,16 @@
 import { computed, ref } from 'vue'
 import BaseIcon from './BaseIcon.vue'
 
+const props = defineProps({
+  isSwitch: Boolean,
+  optionsChecks: {
+    type: [String, Number, Boolean],
+    default: null
+  },
+  labelCheck: String,
+  name: String,
+  row: Boolean
+})
 const emit = defineEmits(['update:modelValue'])
 
 const modelValue = ref(false)
@@ -13,10 +23,7 @@ const computedValue = computed({
     emit('update:modelValue', value)
   }
 })
-const props = defineProps({
-  isSwitch: Boolean,
-  isCheckbox: Boolean
-})
+
 const stylesCheck = computed(() => {
   let base = []
   props.isSwitch
@@ -37,18 +44,33 @@ const styleContent = computed(() => {
 })
 </script>
 <template>
-  <div :class="styleContent">
-    <input
-      v-model="computedValue"
-      type="checkbox"
-      :class="stylesCheck"
-    />
-    <div v-if="!isSwitch">
-      <BaseIcon
-        v-if="modelValue"
-        class="absolute cursor-pointer text-white"
-        name="fa-solid fa-check"
+  <div
+    :class="
+      props.row
+        ? 'inline-flex gap-2 pr-4 last:pr:0'
+        : 'flex gap-2 pb-4 last:pb-0'
+    "
+    class="items-center"
+  >
+    <div :class="styleContent">
+      <input
+        v-model="computedValue"
+        type="checkbox"
+        :class="stylesCheck"
+        :value="optionsChecks"
+        :name="name"
       />
+      <div
+        v-if="!isSwitch"
+        class="absolute flex justify-center items-center"
+      >
+        <BaseIcon
+          v-if="modelValue"
+          class="absolute cursor-pointer text-white"
+          name="fa-solid fa-check"
+        />
+      </div>
     </div>
+    <label for="">{{ labelCheck }}</label>
   </div>
 </template>

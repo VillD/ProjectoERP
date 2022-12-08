@@ -5,6 +5,9 @@ import FormField from './FormField.vue'
 import InputTextArea from './InputTextArea.vue'
 import BaseButton from './BaseButton.vue'
 import FormCheck from './FormCheck.vue'
+import FormRadio from './FormRadio.vue'
+
+const arrayCheck = ['lorem', 'ipsum', 'dolore']
 </script>
 <template>
   <div class="p-6">
@@ -53,7 +56,47 @@ import FormCheck from './FormCheck.vue'
       >
         <InputTextArea text-ghost="Explain how we can help you" />
       </FormField>
-      <FormField label="Checkbox"><FormCheck /> </FormField>
+
+      <FormField label="Checkbox">
+        <FormCheck
+          v-for="(checking, index) in arrayCheck"
+          :key="index"
+          :options-checks="checking"
+          :label-check="checking"
+          name="sample-check"
+          row
+        />
+      </FormField>
+
+      <hr class="my-6 -mx-6 border-slate-800 border-t" />
+
+      <FormField label="Radio">
+        <FormRadio
+          v-for="(radio, index) in arrayCheck"
+          :key="index"
+          :value-radio="radio"
+          name="sample-radio"
+          :label-radio="radio"
+          row=""
+        />
+      </FormField>
+
+      <hr class="my-6 -mx-6 border-slate-800 border-t" />
+
+      <FormField label="Swtich">
+        <FormCheck
+          v-for="(swtich, index) in arrayCheck"
+          :key="index"
+          name="sample-swtich"
+          is-switch
+          row
+          :label-check="swtich"
+        >
+        </FormCheck>
+      </FormField>
+
+      <hr class="my-6 -mx-6 border-slate-800 border-t" />
+
       <div class="flex gap-4 py-6">
         <BaseButton>Submit</BaseButton>
         <BaseButton outline>Reset</BaseButton>

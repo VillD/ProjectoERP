@@ -71,6 +71,10 @@ const styleContent = computed(() => {
         />
       </div>
     </div>
-    <label for="">{{ labelCheck }}</label>
+    <label
+      class="dark:text-white"
+      for=""
+      >{{ labelCheck }}</label
+    >
   </div>
 </template>

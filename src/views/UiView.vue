@@ -5,7 +5,7 @@ import BaseSetting from '../components/BaseSetting.vue'
 import BaseButton from '../components/BaseButton.vue'
 import BaseIcon from '../components/BaseIcon.vue'
 import ButtonPill from '../components/ButtonPill.vue'
-import BaseCard from '../components/BaseCard.vue'
+import BaseCard from '../components/BaseModal.vue'
 import NotificationBar from '../components/NotificationBar.vue'
 
 import { ref } from 'vue'

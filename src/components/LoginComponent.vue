@@ -1,78 +1,57 @@
 <script setup>
-import CardBasic from "./CardBasic.vue";
+import BaseButton from './BaseButton.vue'
+import BaseCard from './BaseCard.vue'
+import FormCheck from './FormCheck.vue'
+import FormField from './FormField.vue'
+import FormInput from './FormInput.vue'
 </script>
 <template>
-  <div class="m-2">
-    <CardBasic
-      class="bg-slate-900/70 py-6 max-w-xs sm:max-w-md flex flex-col shadow-2xl"
+  <div class="m-2 w-11/12 md:w-7/12 lg:w-6/12 xl:w-4/12 shadow-2xl">
+    <BaseCard
+      class="bg-slate-900/70 max-w-xs sm:max-w-md flex flex-col rounded"
+      :form="true"
     >
       <template #body>
-        <div>
-          <form action="">
-            <div class="flex flex-col mb-6">
-              <label for="user" class="text-lg font-semibold mb-4">Login</label>
-              <div class="relative flex items-center">
-                <input
-                  type="text"
-                  name=""
-                  id="user"
-                  class="bg-slate-800 px-3 max-w-full pl-10 py-3 text-sm rounded-md border border-gray-700 h-12 w-full"
-                />
-                <span
-                  class="absolute left-0 justify-center top-0 w-10 h-12 inline-flex items-center text-gray-500"
-                  ><font-awesome-icon icon="fa-solid fa-user"
-                /></span>
-              </div>
+        <div class="">
+          <FormField
+            label="Login"
+            help="Please enter your login"
+          >
+            <FormInput
+              type="text"
+              name="user"
+              icon="fa-user"
+            ></FormInput>
+          </FormField>
 
-              <span class="text-sm mt-2 text-gray-300"
-                >Please enter your login</span
-              >
-            </div>
-            <div class="flex flex-col mb-6">
-              <label for="password" class="text-lg font-semibold mb-4"
-                >Password</label
-              >
-              <div class="relative flex items-center">
-                <input
-                  type="password"
-                  name=""
-                  id="password"
-                  class="bg-slate-800 px-3 max-w-full pl-10 py-3 text-sm rounded-md border border-gray-700 h-12 w-full"
-                />
-                <span
-                  class="absolute left-0 justify-center top-0 w-10 h-12 inline-flex items-center text-gray-500"
-                  ><font-awesome-icon icon="fa-solid fa-lock"
-                /></span>
-              </div>
+          <FormField
+            label="Password"
+            help="Please enter your password"
+          >
+            <FormInput
+              type="password"
+              name="password"
+              icon="fa-lock"
+            ></FormInput>
+          </FormField>
 
-              <span class="text-sm mt-2 text-gray-300"
-                >Please enter your password</span
-              >
-            </div>
-            <div class="flex items-center mb-10">
-              <input
-                type="checkbox"
-                name=""
-                id="check"
-                class="appearance-none w-5 h-5 mr-2 border bg-slate-800 border-gray-700 rounded text-white"
-              />
-              <label for="check">Remember</label>
-            </div>
-            <div class="flex">
-              <input
-                type="submit"
-                class="p-2 mr-4 rounded-md border-blue-500 bg-blue-500 w-1/5 cursor-pointer hover:bg-blue-600 hover:border-blue-600 hover:transition"
-                value="Login"
-              />
-              <input
-                type="submit"
-                class="p-2 rounded-md border border-blue-500 w-1/5 cursor-pointer text-blue-500 hover:bg-blue-600 hover:border-blue-600 hover:text-white hover:transition"
-                value="Back"
-              />
-            </div>
-          </form>
+          <FormField>
+            <FormCheck
+              label-check="Remember"
+              name="check"
+            ></FormCheck>
+          </FormField>
+
+          <!-- Buttons -->
         </div>
       </template>
-    </CardBasic>
+      <template #footer>
+        <div class="flex gap-4">
+          <BaseButton>Submit</BaseButton>
+
+          <BaseButton outline="">Back</BaseButton>
+        </div>
+      </template>
+    </BaseCard>
   </div>
 </template>

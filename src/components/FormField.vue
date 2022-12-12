@@ -15,7 +15,7 @@ defineProps({
     <label
       v-if="label"
       :for="label"
-      class="block font-bold mb-2"
+      class="block font-bold mb-2 dark:text-white"
       >{{ label }}
     </label>
 

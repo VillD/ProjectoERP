@@ -2,7 +2,7 @@
 import { computed, ref } from 'vue'
 import BaseButton from './BaseButton.vue'
 // import UserAvatar from './UserAvatar.vue'
-import BaseCard from './BaseCard.vue'
+import BaseCard from './BaseModal.vue'
 import BaseIcon from './BaseIcon.vue'
 import TableCheckbox from './TableCheckbox.vue'
 import UserAvatar from './UserAvatar.vue'

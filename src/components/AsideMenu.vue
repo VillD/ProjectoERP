@@ -1,4 +1,3 @@
-<!-- eslint-disable no-unused-vars -->
 <script setup>
 import AsideMenuLink from './AsideMenuLink.vue'
 import { reactive } from 'vue'
@@ -45,11 +44,11 @@ let items = reactive([
     drop: false,
     children: [
       {
-        to: '/login',
+        to: '',
         label: 'Item One'
       },
       {
-        to: '/login',
+        to: '',
         label: 'Item Two'
       }
     ]

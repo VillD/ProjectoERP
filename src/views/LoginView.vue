@@ -1,7 +1,10 @@
-<script></script>
+<script setup>
+import LoginComponent from '../components/LoginComponent.vue'
+</script>
 <template>
-  <div class="flex">
-    <font-awesome-icon icon="fa-solid fa-lock" />
-    <h1>Forms example</h1>
+  <div
+    class="flex min-h-screen items-center justify-center bg-gradient-to-tr from-slate-700 via-slate-900 to-slate-800"
+  >
+    <LoginComponent></LoginComponent>
   </div>
 </template>

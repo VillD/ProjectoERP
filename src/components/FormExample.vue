@@ -1,31 +1,67 @@
 <script setup>
-import InputText from './InputText.vue'
-import InputSelect from './InputSelect.vue'
+import FormInput from './FormInput.vue'
+import FormSelect from './FormSelect.vue'
 import FormField from './FormField.vue'
 import InputTextArea from './InputTextArea.vue'
 import BaseButton from './BaseButton.vue'
 import FormCheck from './FormCheck.vue'
 import FormRadio from './FormRadio.vue'
+import * as Yup from 'yup'
+import { Form, Field } from 'vee-validate'
 
 const arrayCheck = ['lorem', 'ipsum', 'dolore']
+
+const exampleSelect = {
+  label: 'Favorite Drink',
+  name: 'drink',
+  as: 'select',
+  children: [
+    {
+      tag: 'option',
+      value: '',
+      text: ''
+    },
+    {
+      tag: 'option',
+      value: 'coffee',
+      text: 'Coffeee'
+    },
+    {
+      tag: 'option',
+      value: 'tea',
+      text: 'Tea'
+    },
+    {
+      tag: 'option',
+      value: 'coke',
+      text: 'Coke'
+    }
+  ]
+}
+const schema = Yup.object().shape({
+  name: Yup.string().required(),
+  email: Yup.string().email().required(),
+  telf: Yup.string().required().length(9)
+})
 </script>
 <template>
   <div class="p-6">
-    <form
-      action=""
-      class=""
-    >
+    <Form :validation-schema="schema">
       <FormField label="Grouped with icons">
         <div class="flex justify-between mt-2 gap-4">
-          <InputText
-            type-input="text"
+          <FormInput
+            type="text"
+            name="name"
             icon="fa-user"
             class="w-full"
+            placeholder="Jhon Dahn"
           />
-          <InputText
-            type-input="text"
+          <FormInput
+            type="email"
+            name="email"
             icon="fa-rectangle-list"
             class="w-full"
+            placeholder="john.doe@example.com"
           />
         </div>
       </FormField>
@@ -34,15 +70,16 @@ const arrayCheck = ['lorem', 'ipsum', 'dolore']
         label="With help line"
         help="Do not enter the leading zero"
       >
-        <InputText
-          type-input="text"
+        <FormInput
+          type="tel"
+          name="telf"
           class="w-full mt-2"
-          text-ghost="Your phone number"
+          placeholder="Your phone number"
         />
       </FormField>
 
       <FormField label="Dropdown">
-        <InputSelect
+        <FormSelect
           :value-opions="['Business development', 'Marketing', 'Sales']"
           class="mt-2"
         />
@@ -101,6 +138,6 @@ const arrayCheck = ['lorem', 'ipsum', 'dolore']
         <BaseButton>Submit</BaseButton>
         <BaseButton outline>Reset</BaseButton>
       </div>
-    </form>
+    </Form>
   </div>
 </template>

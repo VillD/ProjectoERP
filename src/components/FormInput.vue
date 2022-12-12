@@ -1,27 +1,34 @@
 <script setup>
 import BaseIcon from './BaseIcon.vue'
+import { Field, ErrorMessage } from 'vee-validate'
+
 defineProps({
-  textGhost: String,
+  placeholder: { type: String, default: null },
   icon: {
     type: String,
     default: null
   },
-  text: {
+  name: {
     type: String,
     default: null
   },
-  typeInput: {
+  type: {
     type: String,
+    required: true
+  },
+  rules: {
+    type: Function,
     default: null
   }
 })
 </script>
 <template>
   <div class="relative">
-    <input
-      :type="typeInput"
-      :placeholder="textGhost"
+    <Field
+      :type="type"
+      :placeholder="placeholder"
       :class="icon ? 'pl-10' : 'px-3'"
+      :name="name"
       class="h-12 border border-gray-700 bg-slate-800 text-white w-full rounded"
     />
     <div
@@ -33,5 +40,9 @@ defineProps({
         class="text-xs text-slate-400"
       />
     </div>
+    <ErrorMessage
+      class="text-sm text-danger"
+      :name="name"
+    ></ErrorMessage>
   </div>
 </template>

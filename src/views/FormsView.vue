@@ -1,9 +1,6 @@
 <script setup>
 import BaseIcon from '../components/BaseIcon.vue'
-import FormDynamic from '../components/FormDynamic.vue'
 import FormExample from '../components/FormExample.vue'
-import FormTest from '../components/FormTest.vue'
-import FormUseField from '../components/formUseField.vue'
 </script>
 <template>
   <div class="p-6 xl:max-w-6xl xl:mx-auto">
@@ -21,16 +18,6 @@ import FormUseField from '../components/formUseField.vue'
     <div class="flex mb-6 gap-6 flex-col">
       <div class="bg-slate-900/70 rounded-2xl flex-1 text-white">
         <FormExample />
-      </div>
-      <div class="bg-slate-900/70 rounded-2xl flex-1 text-white">
-        <FormTest />
-      </div>
-
-      <div class="bg-slate-900/70 rounded-2xl flex-1 text-white">
-        <FormDynamic />
-      </div>
-      <div class="bg-slate-900/70 rounded-2xl flex-1 text-white">
-        <FormUseField />
       </div>
     </div>
   </div>

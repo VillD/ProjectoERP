@@ -1,4 +1,5 @@
 <script setup>
+import { Field } from 'vee-validate'
 defineProps({
   valueOpions: {
     type: Array,

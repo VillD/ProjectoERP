@@ -4,10 +4,6 @@ defineProps({
     type: String,
     default: null
   },
-  labelFor: {
-    type: String,
-    default: null
-  },
   help: {
     type: String,
     default: null
@@ -18,7 +14,7 @@ defineProps({
   <div class="mb-6 last:mb-0">
     <label
       v-if="label"
-      :for="labelFor"
+      :for="label"
       class="block font-bold mb-2"
       >{{ label }}
     </label>

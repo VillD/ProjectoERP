@@ -42,14 +42,6 @@ const submit = (e) => {
     </header>
 
     <div
-      v-if="empty"
-      class="text-center py-24 text-gray-500 dark:text-slate-400"
-    >
-      <p>Nothing's here…</p>
-    </div>
-
-    <div
-      v-else
       class="flex-1"
       :class="{ 'p-6': !hasTable }"
     >

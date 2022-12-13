@@ -11,33 +11,6 @@ import { Form, Field } from 'vee-validate'
 
 const arrayCheck = ['lorem', 'ipsum', 'dolore']
 
-const exampleSelect = {
-  label: 'Favorite Drink',
-  name: 'drink',
-  as: 'select',
-  children: [
-    {
-      tag: 'option',
-      value: '',
-      text: ''
-    },
-    {
-      tag: 'option',
-      value: 'coffee',
-      text: 'Coffeee'
-    },
-    {
-      tag: 'option',
-      value: 'tea',
-      text: 'Tea'
-    },
-    {
-      tag: 'option',
-      value: 'coke',
-      text: 'Coke'
-    }
-  ]
-}
 const schema = Yup.object().shape({
   name: Yup.string().required(),
   email: Yup.string().email().required(),
@@ -80,8 +53,10 @@ const schema = Yup.object().shape({
 
       <FormField label="Dropdown">
         <FormSelect
-          :value-opions="['Business development', 'Marketing', 'Sales']"
+          :options="['Business development', 'Marketing', 'Sales']"
+          name="example"
           class="mt-2"
+          as="select"
         />
       </FormField>
 

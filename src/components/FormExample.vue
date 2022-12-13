@@ -7,9 +7,10 @@ import BaseButton from './BaseButton.vue'
 import FormCheck from './FormCheck.vue'
 import FormRadio from './FormRadio.vue'
 import * as Yup from 'yup'
-import { Form, Field } from 'vee-validate'
+import { Form } from 'vee-validate'
 
 const arrayCheck = ['lorem', 'ipsum', 'dolore']
+const arrayCheckSwitch = ['lorem', 'ipsum', 'dolore']
 
 const schema = Yup.object().shape({
   name: Yup.string().required(),
@@ -66,16 +67,16 @@ const schema = Yup.object().shape({
         label="Question"
         help="Your question. Max 255 characters"
       >
-        <InputTextArea text-ghost="Explain how we can help you" />
+        <FormInput></FormInput>
       </FormField>
 
       <FormField label="Checkbox">
         <FormCheck
           v-for="(checking, index) in arrayCheck"
           :key="index"
-          :options-checks="checking"
-          :label-check="checking"
-          name="sample-check"
+          :options="checking"
+          :label="checking"
+          :name="checking"
           row
         />
       </FormField>
@@ -97,12 +98,12 @@ const schema = Yup.object().shape({
 
       <FormField label="Swtich">
         <FormCheck
-          v-for="(swtich, index) in arrayCheck"
+          v-for="(swtich, index) in arrayCheckSwitch"
           :key="index"
-          name="sample-swtich"
-          is-switch
+          :name="swtich"
+          :label="swtich"
           row
-          :label-check="swtich"
+          is-switch
         >
         </FormCheck>
       </FormField>

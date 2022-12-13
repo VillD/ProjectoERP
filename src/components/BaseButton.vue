@@ -10,6 +10,10 @@ let props = defineProps({
     type: String,
     default: null
   },
+  typeButton: {
+    type: String,
+    default: 'button'
+  },
   disabled: { type: Boolean, default: false },
   outline: { type: Boolean, default: false },
   small: { type: Boolean, default: false },
@@ -52,7 +56,7 @@ const buttonClass = computed(() => {
 </script>
 <template>
   <button
-    type="button"
+    :type="typeButton"
     :class="buttonClass"
     class="transition"
   >

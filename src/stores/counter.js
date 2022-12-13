@@ -1,10 +1,10 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
-export const useCounterStore = defineStore('counter', () => {
+export const useAuthS = defineStore('counter', () => {
   const count = ref(0)
   const doubleCount = computed(() => count.value * 2)
-  function increment() {
+  async function increment() {
     count.value++
   }
 

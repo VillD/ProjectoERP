@@ -1,6 +1,7 @@
 <script setup>
 import BaseIcon from './BaseIcon.vue'
 import { Field, ErrorMessage } from 'vee-validate'
+import { computed } from '@vue/reactivity'
 
 defineProps({
   placeholder: { type: String, default: null },
@@ -19,6 +20,10 @@ defineProps({
   rules: {
     type: Function,
     default: null
+  },
+  as: {
+    type: String,
+    default: 'input'
   }
 })
 </script>
@@ -29,6 +34,7 @@ defineProps({
       :placeholder="placeholder"
       :class="icon ? 'pl-10' : 'px-3'"
       :name="name"
+      :as="as"
       class="h-12 border border-gray-700 bg-slate-800 text-white w-full rounded"
     />
     <div

@@ -1,16 +1,23 @@
 <script setup>
 import { computed, ref } from 'vue'
 import BaseIcon from './BaseIcon.vue'
+import { Field } from 'vee-validate'
 
 const props = defineProps({
-  isSwitch: Boolean,
-  optionsChecks: {
+  options: {
     type: [String, Number, Boolean],
     default: null
   },
-  labelCheck: String,
-  name: String,
-  row: Boolean
+  label: {
+    type: String,
+    default: null
+  },
+  name: {
+    type: String,
+    default: null
+  },
+  row: Boolean,
+  isSwitch: Boolean
 })
 const emit = defineEmits(['update:modelValue'])
 
@@ -53,13 +60,21 @@ const styleContent = computed(() => {
     class="items-center"
   >
     <div :class="styleContent">
-      <input
+      <Field
         v-model="computedValue"
         type="checkbox"
         :class="stylesCheck"
-        :value="optionsChecks"
+        :value="options"
         :name="name"
-      />
+      >
+      </Field>
+      <!-- <input
+        v-model="computedValue"
+        type="checkbox"
+        :class="stylesCheck"
+        :value="options"
+        :name="name"
+      /> -->
       <div
         v-if="!isSwitch"
         class="absolute flex justify-center items-center"
@@ -73,8 +88,8 @@ const styleContent = computed(() => {
     </div>
     <label
       class="dark:text-white"
-      for=""
-      >{{ labelCheck }}</label
+      :for="name"
+      >{{ label }}</label
     >
   </div>
 </template>

@@ -4,6 +4,10 @@ import BaseCard from './BaseCard.vue'
 import FormCheck from './FormCheck.vue'
 import FormField from './FormField.vue'
 import FormInput from './FormInput.vue'
+import { ref } from 'vue'
+
+let user = ref('')
+let pass = ref('')
 </script>
 <template>
   <div class="m-2 w-11/12 md:w-7/12 lg:w-6/12 xl:w-4/12 shadow-2xl">
@@ -18,6 +22,7 @@ import FormInput from './FormInput.vue'
             help="Please enter your login"
           >
             <FormInput
+              v-model="user"
               type="text"
               name="user"
               icon="fa-user"
@@ -29,6 +34,7 @@ import FormInput from './FormInput.vue'
             help="Please enter your password"
           >
             <FormInput
+              v-model="pass"
               type="password"
               name="password"
               icon="fa-lock"
@@ -46,8 +52,8 @@ import FormInput from './FormInput.vue'
 
       <template #footer>
         <div class="flex gap-4">
-          <BaseButton>Submit</BaseButton>
-          <BaseButton outline="">Back</BaseButton>
+          <BaseButton type-button="submit">Submit</BaseButton>
+          <BaseButton outline>Back</BaseButton>
         </div>
       </template>
     </BaseCard>
